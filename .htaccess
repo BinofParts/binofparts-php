@@ -1,0 +1,6 @@
+RewriteEngine on
+
+RewriteRule ^kop$ kop.php$1
+RewriteRule ^kop/([0-9]+)$ kop.php?y=$1
+RewriteRule ^myteam$ team.php$1
+RewriteRule ^team/([0-9]+)$ team.php?n=$1

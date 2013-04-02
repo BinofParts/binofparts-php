@@ -1,0 +1,17 @@
+This is a total url list to access all official first information.
+
+Current Years Information-FIELD MANAGEMENT SYSTEM(Scoring)
+
+baseURL = https://my.usfirst.org/frc/scoring/index.lasso?
+
+page=[eventlist|teamlist|event_teamlist]
+
+eventlist
+	variables:none
+	url:https://my.usfirst.org/frc/scoring/index.lasso?page=eventlist
+teamlist
+	variables:none
+	url:https://my.usfirst.org/frc/scoring/index.lasso?page=teamlist
+event_teamlist
+	variables:[ID_event]=event ID
+	example:https://my.usfirst.org/frc/scoring/index.lasso?page=event_teamlist&ID_event=7689

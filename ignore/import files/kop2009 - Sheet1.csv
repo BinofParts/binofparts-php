@@ -1,0 +1,184 @@
+C-Channel,,am-0202,6
+C-Base Chassis,Corner Connect,am-0212,8
+C-Base Chassis,Gearbox Brace,am-0203,2
+C-Base Chassis,Gearbox Bracket,am-0204,2
+C-Base Chassis,"3/8-16 x 7"" screw",am-1055,4
+C-Base Chassis,1.86 PVC Spacer,am-0243,4
+C-Base Chassis,2.50 PVC Spacer,am-0244,4
+C-Base Chassis,3/8-16 Nylock Nut,87922050 (MSC),4
+C-Base Chassis,1/4-20 x 1.75 SHCS,71126155 (MSC),32
+C-Base Chassis,1/4-20 x 5/8 SHCS,80263072 (MSC),40
+C-Base Chassis,1/4-20 Nylock Nut,52591294 (MSC),8
+C-Base Chassis,"1/4"" Washer",,8
+"Wheel sprocket, 22-tooth","#35, #10 mntg holes in a 1.875"" D circle, 1.1"" bore",am-0245,4
+Battery Connector Safety Plug,,AM-0122,5
+Rover wheel (aka 2009 FIRST Slick Wheel),"6"" diameter, acetal tread, #10 mntg holes in a 1.875"" D circle",am-0210,4
+Wheel bearings,"Double Shielded, ID: 0.375"", OD: 1.125"", Width: 0.375""",am-0209,8
+Sprocket spacers,"#10 mntg holes in a 1.875"" D circle",am-0207,4
+Mount Plate,,am-0155,2
+Shaft Plate,,am-0261,2
+Output shaft,,am-0153,2
+Extrusion cover,,am-0260,2
+Large Cluster Gear,,am-0149,2
+Large Output Gear,,am-0150,2
+Small Hex Shaft,,am-0152,2
+Small Cluster Gear,,am-0151,2
+"CIM Gear, 14 Tooth",,am-0034,4
+Spacer,,Toughbox_d10,4
+FR6ZZ bearing,,am-0028,6
+FR8ZZ bearing,,am-0030,2
+1/4-20 x 2 SHCS,,71126239 (MSC),8
+1/4-20 nylock nut,,87922035 (MSC),8
+"1/4"" washer",,2994887 (MSC),2
+1/4-20 x 1/2 BHCS,,67563007 (MSC),2
+"#10-32 x 1/2"" SHCS",,9362336 (MSC),8
+2 x 2 x 14mm key,,am-0032,4
+"1/8"" x 1/8"" x 0.40 machine key",,am-1018,2
+"5/16"" clip",,am-0033,4
+"1/2"" E-Klip",,am-0206,2
+"5/16"" washer",,67491605 (MSC),8
+"Camera, Axis 206","206 color camera, MJPEG, 16MB RAM, 4MB Flash, 4mm lens, F2.0",288635,1
+"Radio, Driver Station","Simultaneous Dual-N Band Wireless Router, 2.4GHz & 5 GHz (includes adapter, ethernet",WRT610N,1
+"Radio, Robot","Dual-Band Wireless-N Gaming Adapter (includes adapter, ethernet cable, etc)",WGA600N,1
+Speed Controller (Jaguar),Stellaris Brushed DC motor,MDL-BDC,4
+"Joystick, Attack 3","11 programmable buttons, USB, symmetrical handle",963291-0403,2
+Mobile Device Controller,"compactRIO, 400 MHz Freescale MPC5200 processor",NI-cRIO-FRC,1
+Analog Input Module,"8 analog inputs, Â±10 V input range, 500 kS/s aggregate sampling rate 12-bit resolution",9201,2
+Digital I/O Module,"32-channel digital I/O, 5 V/TTL, sinking/sourcing digital I/O, 1000 Vrms transient isolation, ±30 V",9403,2
+Digital Sourcing Module,"8-channel, 100 Î¼s digital output, 6 to 30 V range, sourcing digital output",9472,1
+Control Layout,,,1
+Breakout board mounting hardware,4-40 x 0.75â€,92196A113,6
+"Adapter, camera, 2-lead","use this adapter for power from your robot, use the adapter in the camera box for power from an",SA106A-0512-6,1
+DB37 Extension Cable,"3ft, beige, Male/Female",02688,2
+Dongle,"Enable/disable dongle for Driver Station, DE9 connector",1,
+"Wire, 14AWG, Red",,,1
+"Wire, 10AWG, Red",,,1
+"Wire, 10AWG, Black",,,1
+"Power connector, Wago",2-pole,734-102,6
+Analog Breakout,,A003266,2
+Solenoid Breakout,,A003265,1
+Power Distribution Board,"8 40A outputs, 12 20/30A outputs, 5V, 12V, & 24V regulated outputs",A003206,1
+Digital SideCar,A003333,2,
+Jumper,"female, 2-pin shunt",68786-102LF,4
+Servo,"42 oz./in. peak torque, 0.19 sec./60Â°",HS-322HD OR HS-325HD,2
+Relay Module (Spike),"12V, 20A Max",SPIKE-RELAY-H,2
+Speed Controller (Victor 884),VICTOR-884-12-12,FR-VIC884,1
+Driver Station,,DS-06062008-1.0,1
+AC Adapter (for Driver Station),"12VDC/1000mA,F2, 2.1mm x 5.5mm,UL/CSA",100870,1
+"Power connector, cRio","female, 4 poles",CTF040V8,2
+FRC Software Bundle,"LabVIEW for FRC, WindRiver",,1
+National Instruments Literature Packet,,,1
+2-wire jumper cable,24â€,03203,5
+Servo Y-splitter cable,12â€,"788 (modified, plastic covers removed)",2
+RC Extension cable,"36â€, 22AWG wire, male/female",RC-218FJ36,8
+20Amp circuit breaker,auto-reset,VB3-A20-F57,5
+30Amp circuit breaker,auto-reset,VB3-A30-F57,2
+40Amp circuit breaker,auto-reset,MX5-A40,4
+"Cable Assembly, Ethernet","2ft, gray",219241-2,1
+"Cable Assembly, Ethernet crossover","5ft, orange",219153-3,1
+"Wire, 18AWG, Red",,,1
+Wago Tool,,,1
+Wind River Installation Notes,,,1
+Brass bag,,PKT12326,1
+"Wire, 6AWG, Black","10â€™, #6 AWG, Black",M3391-101,1
+"Wire, 6AWG, Red","10â€™, #6 AWG, Red",M3391-102,1
+Denso Window Motor - Left,12V DC,262100-3040,1
+Denso Window Motor - Right,12V DC,262100-3030,1
+Compact Fan (Large),12 Vdc,4212/12H-520 or 4212/2-534,2
+Terminal Lugs,"6-14 ga solderless lug, mechanical ",KPA4CUP,8
+"Tie wraps, 4â€","UNIRAP, 4â€, black, 100 ct ",CT18075C,1
+"Tie wraps, 8â€","UNIRAP, 8â€, black, 100 ct ",CT50175C,1
+Terminal Lugs,"6-14 ga solderless lug, compression, copper",YAZV6CTC14FX,8
+Motor/Gearbox assembly,"12VDC w/ 16 tooth pinion, -9015 motor",00968-2910,2
+"Pnuematic tubing, yellow",(1/4 OD x 0.160 ID) x 50â€™ length,1J-151-48P-FW,1
+Air Compressor,12VDC,405ADC38/12,1
+Globe Motor,12Vdc with drive assembly,409A587,2
+Lead Screw w/ nut,,"BF6029 or BF7030 x 13""",1
+"Keyang motor, 12-tooth",,16631023,1
+"Pool Noodle,Sample bumper material",,1,
+Flowers Tote,"27â€ x 17â€ x 12â€, Attached lid ",DC2717-12,1
+Battery Charger,"12V, 6Amp automatic",SC-600A,1
+Lazy Susan,12â€,12C,1
+IEC Rotary Limit Switch,,AAP2T51Z11,1
+Terminal blocks,12 pole w/ wire protector,BM-M092CS,2
+Push button,,GCX1125,2
+"standoff, male/female (for DS and DSC)","4-40, 0.187â€™ long",219-1048,6
+"Nut, bracket assembly","4-40, keps",1137403,16
+"Screw, servo mounting","4-40, 3/4â€",1128667,4
+"Screw, camera pivot","8-32, 3/8â€ ",1172396,1
+"Nut, camera pivot","8-32, nylock ",1170856,1
+"Screw, horn/bracket assembly","4-40, 3/8â€",1172482,8
+"Screw, hex, servo mount","4-40, 1/2â€, low profile ",0170662,4
+Nylon spacer,1/4â€,,4
+spring lock washer,#4 screw size ,91102A720,4
+Axis Case,,Axis Case,1
+Base,,Axis Case,1
+Pan Plate,,Axis Case,1
+Servo Brace,,Axis Case,1
+Compact fan (mini),12 Vdc,412,6
+Supporting sprocket,,16-5M09-6FA3,2
+Larger Supporting sprocket,,32-5M15-6A3,2
+Sprocket,"56 tooth, 15mm wide, HTD unfinished minimum plain bore sprocket",56-5M15-6A5,2
+Belting,"535 mm long, 9mm wide, 5mm pitch GT2 belt",5MR-535-09,1
+Belting,"535 mm long, 15mm wide, 5mm pitch GT2 belt",5MR-535-15,1
+Belting,5MR900-15,"900mm long, 15mm wide, 5mm pitch GT2 belt",1
+Microswitch,,V7-2B17D8-048,2
+Teflon tape,"roll, 1/4"" x 520'",,1
+Latex Tubing,1/4â€ ID x 3/8â€ OD x 5â€™ L ,5234k44,1
+Mabuchi motor,,RS385SH-2270,2
+Secondary Regulator,,101-3002-1,1
+Secondary Regulator Bracket,Mounting bracket ,13536,1
+Master Link for Chain,#35 Link,,4
+Pressure Switch,Opens 115psi;  Closes 95psi ,SM-2B-115R/443,1
+"Main Regulator, adjustable",,R07-100-RNEA,1
+Main Regulator Mounting Kit,Bracket and Nut,18-025-003,1
+Pressure Gauge,"1/8"" NPT, 0 - 160 psi",18-013-212,1
+Circuit Breaker,"120A, Automotive style",CB3-SM-120,1
+Pressure Gauge,"1/8"" NPT, 0 - 160 psi",9690242,1
+OEM Miniature Optical Kit Encoder,"250 CPR, 1/4â€ bore",E4P-250-250-D-D-D-B,2
+4-pin encoder connector,26AWG wire,CA-MIC4-W4-NC-1,2
+DryLin S Aluminum Shaft,24â€ Hard Anodized,AWI-10,2
+igubal Flange Bearing,,EFOI-10,2
+igubal Rod End Bearing,,EBRI-10R,2
+Energy Chain Cable Carrier,3ft long,045-10-018-0,1
+Energy Chain Mounting Bracket Set,,0450-10-12,1
+DryLin N Linear Guide System,,NK02-40-2-610,1
+iglide bearing,,JSI-1012-08,4
+iglide bearing,,JFI-1012-08,4
+iglide bearing,,MTI-10,4
+iglide bearing,,MCI-06-02,4
+Orbit Ball,,,1
+"Target material, pink","1000 Denier Cordura Fabric, hot pink, #1201",,1
+"Target material, green","1000 Denier Cordura Fabric, flourescent green, #1089",,1
+Trailer Hitch Spacer,"1â€ square, 7â€ long",,1
+Quick-Disconnect Battery Connector,"#6 wire pair, red & black, 12â€ tail",6331G1,4
+Accumulator,"Volume tank, 2"" bore by 6"" long",AVT-32-16,2
+Solenoid valve,12V DC solenoid single valve,13026684,1
+"Gloves, pair",,2RA69,1
+2.5â€ CIM Motor,"12V DC, 2.5â€ diameter",FR801-001,2
+Kamen Tote,"27â€ x 17â€ x 12â€, Attached lid",DC2717-12,1
+Chain,"#35, 10â€™ length",,2
+Output sprocket,"#35, 15 Tooth, 1/2â€ bore, 1/8â€ keyway ",36684974 / H35B15F-1/2,4
+"Coupler, Denso motor","black, injection molded plastic, 6 tooth",Denso-6,2
+"Coupler, Keyang motor, 12 tooth",,Keyang-12,1
+Panel signal device,12V Light,855PB-B12ME522,1
+Ring Terminal,"PIDG, #6 stud, 24-20AWG ",323986,4
+Ring Terminal,"PIDG, #6 stud, 16-14AWG",320619,10
+Ring Terminal,"#6ga- 1/4â€ stud, Plasti-Grip",52042-3,10
+Ring Terminal,"12-10ga Ring Lugs, PIDG ",35149,10
+"Quick Disconnect, female","10-12ga, .250d, FASTON",4-520448-2,20
+"Quick Disconnect, female","16-14ga, .250d, FASTON",3-520408-2,10
+"Quick Disconnect, male","12-10ga, .250d",4-521098-2,10
+Spade terminal,"PIDG, #8 stud, 12-10 AWG",32588,20
+"Motor, RS-545",,,2
+Sensor Board - Acclerometer,,,1
+Sensor Board - Gyroscope,,,1
+Battery,"12 volt, 18 AH, Non-Spillable",ES17-12,2
+Relief Valve,120 psi relief valve,16-004-011,1
+Autodesk Inventor Professional 2009,www.autodesk.com/firstplace (10 licenses per team),,1
+Autodesk 3ds Max 2009,www.autodesk.com/firstplace (5 licenses per team),,1
+Custom Bimba Cylinders,www.bimba.com,,3
+Altium Designer,www.altium.com/frc2009,,1
+PTC Pro/ENGINEER,http://www.ptc.com/go/frcregistration,,1
+PTC Windchill,http://www.ptc.com/go/frcregistration,,1
+PTC Mathcad,http://www.ptc.com/go/frcregistration,,1
