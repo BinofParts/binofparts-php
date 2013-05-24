@@ -13,7 +13,7 @@ include('session.php');
 			<div id="display">
 			<?php 
 			if ($_GET['y']<=2012&&$_GET['y']>=1992) {
-				echo '<a href="kop"><--- Back to View Another Year.</a>';
+				echo '<a href="/kop"><--- Back to View Another Year.</a>';
 				$database->displayKop($_GET['y']);
 			}
 			else{

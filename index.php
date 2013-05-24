@@ -17,7 +17,7 @@ if(!$session->logged_in){
 					//TODO: Add Homepage Here
 				?>
 			</div>
-			<?php include_once("/footer.php"); ?>
+			<?php include_once("footer.php"); ?>
 	</div>
 </body>
 </html>
