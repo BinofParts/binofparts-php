@@ -11,7 +11,7 @@ if(!$session->logged_in){
 </head>
 <body>
 	<div id="content">
-			<?php include_once("sidebar.html"); ?>
+			<?php include_once("sidebar.php"); ?>
 			<div id="display">
 			 	This will be the settings page.
 			</div>

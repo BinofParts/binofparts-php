@@ -28,7 +28,7 @@ if(!$session->logged_in){
 </head>
 <body>
 	<div id="content">
-		<?php include_once("sidebar.html"); ?>			
+		<?php include_once("sidebar.php"); ?>			
 		<div id="display">
 			<div id="change"><?php $database->displayLiveFeed();?></div>
 		</div>

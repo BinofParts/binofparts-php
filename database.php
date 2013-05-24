@@ -82,6 +82,25 @@ class Database
 		echo '</tbody>';
 		echo '</table>';
 	}
+	function displayTeamList(){
+		$query = "SELECT * FROM teams ORDER BY id";
+		$result = mysqli_query($this->link, $query);
+		echo'<div id="teamlist">';		
+        if ($result) {
+            while($row = mysqli_fetch_assoc($result)){
+				echo '<div>';
+				echo '<a>'.$row['number'].' </a>';
+				echo '<a>'.$row['name'].' </a>';
+            	echo '<b>'.$row['name_short'].'</b>';
+				echo '<a> '.$row['location_city'].', '.$row['location_state'].', '.$row['location_country'].'</a>';
+				echo '</div><br>';
+			}
+        }
+		else{
+			echo 'No Teams in database';
+		}
+		echo '</div>';
+	}
 	function displayEvents(){
 		$query = "SELECT id, name, location_arena, location_city, location_state, start_date, end_date FROM events ORDER BY start_date";
 		$result = mysqli_query($this->link, $query);

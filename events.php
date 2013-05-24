@@ -8,7 +8,7 @@ include('session.php');
 </head>
 <body>
 	<div id="content">
-			<?php include_once("sidebar.html"); ?>
+			<?php include_once("sidebar.php"); ?>
 			<div id="display">
 			<?php $database->displayEvents(); ?>
 			</div>

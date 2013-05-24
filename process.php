@@ -71,7 +71,7 @@ class Process
 		else{
 			//set session variable for error message
 		}
-		header('Location: /settings.php');
+		header('Location: settings.php');
 	}
 	private function passreset(){
 		global $database, $mailer;
@@ -84,7 +84,7 @@ class Process
 		else{
 			$_SESSION['error'] = true;
 		}
-		header('Location: /forgotpassword.php');
+		header('Location: forgotpassword.php');
 	}
 	private function register(){
 		global $database;

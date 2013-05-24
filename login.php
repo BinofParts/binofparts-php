@@ -13,7 +13,7 @@ if($session->logged_in){
 			
 			</div>
 			<div id="loginbox">
-			<form name="login" id="loginform" action="/process.php" method="post">
+			<form name="login" id="loginform" action="process.php" method="post">
 				<b>Login</b>
 				<hr>
 				<label>Email:</label><input class="input" type="text" name="email" /></br>
@@ -22,7 +22,7 @@ if($session->logged_in){
 				<input type="hidden" name="sublogin" value="1">
 				<button type="submit" id="loginbtn" value="Login"/>Login</button></br>
 			</form>
-			<div id="bottomboxlogin"><a name="reg_link" href="/register.php"/>Register</a></div>
+			<div id="bottomboxlogin"><a name="reg_link" href="register.php"/>Register</a></div>
 			</div>
 	</div>
 </body>

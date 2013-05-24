@@ -1,17 +1,17 @@
 <?php 
-include('session.php');
+include('/session.php');
 if(!$session->logged_in){
-	header('Location: login.php');
+	header('Location: /login.php');
 }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include_once("head.html"); ?>
+	<?php include_once("/head.html"); ?>
 </head>
 <body>
 	<div id="content">
-			<?php include_once("sidebar.html"); ?>
+			<?php include_once("/sidebar.php"); ?>
 			<div id="display">
 				<div id="team_top">
 				<div id="banner_container"><div id="banner_img"></div></div>

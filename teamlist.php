@@ -1,8 +1,5 @@
 <?php 
 include('session.php');
-if(!$session->logged_in){
-	header('Location: login.php');
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,9 +8,9 @@ if(!$session->logged_in){
 </head>
 <body>
 	<div id="content">
-			<?php include_once("sidebar.html"); ?>
+			<?php include_once("sidebar.php"); ?>
 			<div id="display">
-					This is the inventory page.
+			<?php $database->displayTeamList(); ?>
 			</div>
 	</div>
 </body>

@@ -11,17 +11,13 @@ if(!$session->logged_in){
 </head>
 <body>
 	<div id="content">
-			<?php include_once("sidebar.html"); ?>
+			<?php include_once("sidebar.php"); ?>
 			<div id="display">
-		<?php 	if(isset($_GET['display'])){
-					if($_GET['display'] == 'myteam'){
-						$database->displayTeam($session->username);
-					}				
-				} else{
-					echo 'This is the homepage.';
+				<?php echo 'This is the homepage.';
 					//TODO: Add Homepage Here
-				}?>
+				?>
 			</div>
+			<?php include_once("/footer.php"); ?>
 	</div>
 </body>
 </html>
