@@ -94,10 +94,11 @@ function login($user, $pass) {
 	if ($isGood) {
 		//authorized
 		$_SESSION['username'] = $result['result'][0]['email'];
+		unset($result['result'][0]['pass']);
 		print json_encode($result);
 	} else {
 		//not authorized
-		errorJson('Authorization failed');
+		errorJson('The username or password you entered were incorrect.');
 	}
 }
 
@@ -136,7 +137,8 @@ function upload($id, $photoData, $title) {
 function kop($year) {
 	if ($year<=2012||$year>=2007) {
 		$kop = sprintf('kop%d',$year);
-		$result = query("SELECT * FROM $kop ORDER BY id DESC");
+		$result = query("SELECT * FROM $kop ORDER BY id");
+		
 	} else {
 		errorJson('Sorry we dont have this years kit of parts in our database. Do you have a copy of this years kit of parts? Send it to us in an email, and well be sure to update our database. :)');
 	}
@@ -146,6 +148,12 @@ function kop($year) {
 	} else {
 		errorJson('Photo stream is broken');
 	}
+}
+
+function feed($lastid){
+	$result = query("SELECT * FROM trades WHERE id > $lastid ORDER BY id DESC");
+	
+	print json_encode($result);
 }
 
 function logout() {

@@ -1,4 +1,5 @@
 <div class="sidebar">
+	<div class="sidebar-logo" onclick="document.location.href='/index.php'"><img src="/images/BoP_logo_full.png" alt="BoP Logo" width="95"></div>
 <?php if($session->logged_in){ ?>
 <ul id="<?php echo basename($_SERVER['PHP_SELF'],'.php') ?>">
 	<li id="index"><a href="/index.php">Home<a></li>

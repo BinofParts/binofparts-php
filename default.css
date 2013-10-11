@@ -185,6 +185,12 @@ a:active {
 	-webkit-box-shadow: 2px 0px 4px -1px #D2D2D2 ;
 	background-color:#DDDDDD;
 }
+.sidebar-logo{
+	position:absolute;
+	padding-left:35px;
+	width:175px;
+	cursor:pointer;
+}
 .sidebar ul{
 	margin-top:75px;
 	width:175px;
@@ -204,9 +210,9 @@ a:active {
 }
 .sidebar a:hover{
 	background-color:#FAFAFA;
-	box-shadow: inset -4px 0 0 -1px #1fc200;
+	/*box-shadow: inset -4px 0 0 -1px #1fc200;
 	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
-	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;
+	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;*/
 }
 #sidebar-bottom{
 	position:absolute;
@@ -221,8 +227,18 @@ a:active {
 	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
 	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;
 }
+#index #index a:hover{
+	box-shadow: inset -4px 0 0 -1px #1fc200;
+	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
+	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;
+}
 #feed #feed{
 	background-color:#FAFAFA;
+	box-shadow: inset -4px 0 0 -1px #1fc200;
+	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
+	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;
+}
+#feed #feed a:hover{
 	box-shadow: inset -4px 0 0 -1px #1fc200;
 	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
 	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;
@@ -233,8 +249,18 @@ a:active {
 	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
 	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;
 }
+#team #team a:hover{
+	box-shadow: inset -4px 0 0 -1px #1fc200;
+	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
+	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;
+}
 #kop #kop{
 	background-color:#FAFAFA;
+	box-shadow: inset -4px 0 0 -1px #1fc200;
+	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
+	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;
+}
+#kop #kop a:hover{
 	box-shadow: inset -4px 0 0 -1px #1fc200;
 	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
 	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;
@@ -245,14 +271,29 @@ a:active {
 	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
 	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;
 }
+#teamlist #teamlist a:hover{
+	box-shadow: inset -4px 0 0 -1px #1fc200;
+	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
+	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;
+}
 #events #events{
 	background-color:#FAFAFA;
 	box-shadow: inset -4px 0 0 -1px #1fc200;
 	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
 	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;
 }
+#events #events a:hover{
+	box-shadow: inset -4px 0 0 -1px #1fc200;
+	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
+	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;
+}
 #settings #settings{
 	background-color:#FAFAFA;
+	box-shadow: inset -4px 0 0 -1px #1fc200;
+	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
+	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;
+}
+#settings #settings a:hover{
 	box-shadow: inset -4px 0 0 -1px #1fc200;
 	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
 	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;
@@ -305,15 +346,16 @@ a:active {
 	margin:auto;
 	width:750px;
 	height:200px;
-	padding:5px;
-	border:1px solid #C5C5C5;
-	box-shadow: 0px 0px 8px 4px #D2D2D2 ;
-	-moz-box-shadow: 0px 0px 8px 4px #D2D2D2 ;
-	-webkit-box-shadow: 0px 0px 8px 4px #D2D2D2 ;
+	padding:2px;
+	background-color:#FFFFFF;
+	border:2px solid #FFFFFF;
+	border-radius:1px;
+	box-shadow: 0px 0px 2px rgba(0,0,0,0.9);
 }
 #banner_img {
 	height:200px;
 	background-color:#DDDDDD;
+	box-shadow: 0px 0px 2px rgba(0,0,0,0.9);
 }
 #team_top {
 	padding-bottom:10px;
@@ -321,9 +363,20 @@ a:active {
 #team_bottom {
 	margin:auto;
 	width:800px;
-	padding-top:10px;
+	padding-top:25px;
 }
 #team_roster {
 	float:left;
-	width:425px;
+	width:400px;
+}
+#team_roster td{
+	border-radius:2px;
+	padding:2px 5px 2px 5px;
+}
+#team_roster .user{
+	color:#FAFAFA;
+	padding-left:20px;
+	padding-right:5px;
+	border-left: 1px solid #C5C5C5;
+	background-color:#1fc200;
 }

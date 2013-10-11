@@ -16,14 +16,14 @@ if(!$session->logged_in){
 		        url: 'ajax.php',
 		        data: 'last=' +latestid,
 				type: 'POST',
-		        cache: false,
+		        cache: true,
 		        success: function(response) {
 					if(response){
 						$('#change').prepend(response);
 					}
 		        }
 		    });
-	},1500);
+	},10000);
 	</script>
 </head>
 <body>

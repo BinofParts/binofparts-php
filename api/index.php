@@ -18,6 +18,9 @@ switch ($_POST['command']) {
 	case "logout":
 		logout();break;
 		
+	case "feed":
+		feed($_POST['lastid']);break;
+		
 	case "kop":
 		kop((int)$_POST['year']);break;
  

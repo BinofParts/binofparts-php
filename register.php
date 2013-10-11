@@ -11,7 +11,7 @@
 			<div id="registerbox">
 			<form name="register" id="registerform" action="/process.php" method="post">
 				<b>Register</b></br>
-				<i>You know you want to.</i>
+				<i>Please fill out the information below.</i>
 				<hr>
 				<label>Team Number:</label><input type="text" name="team" /></br>
 				<label>First Name:</label><input type="text" name="namefirst" /></br>

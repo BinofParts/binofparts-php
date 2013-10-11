@@ -56,6 +56,12 @@ class Database
 		
 		echo '<table align="center">';
 		echo '<tbody>';
+		echo '<tr>';
+		echo '<th></th>';
+		echo '<th>Name</th>';
+		echo '<th>Email</th>';
+		echo '<th>Role</th>';
+		echo '</tr>';
 		if (!$result2 || mysqli_num_rows($result2) < 1) {
 			echo ('<tr>');
 			echo("<td>None to display.</td>");
@@ -69,14 +75,14 @@ class Database
 		
 			echo ('<tr>');
 			if($username == $row['email']){
-				echo ('<td>YOU</td>');
+				echo ('<td class="user">You</td>');
 			}
 			else{
 				echo ('<td></td>');
 			}
 			echo ('<td>'.$row['namefirst'].' '.$row['namelast'].'</td>');
 			echo ('<td>'.$row['email'].'</td>');
-			echo ('<td>'.$row['type'].'</td>');
+			echo ('<td>'.ucfirst($row['type']).'</td>');
 			echo ('</tr>');
 		}
 		echo '</tbody>';
@@ -88,12 +94,14 @@ class Database
 		echo'<div id="teamlist">';		
         if ($result) {
             while($row = mysqli_fetch_assoc($result)){
-				echo '<div>';
-				echo '<a>'.$row['number'].' </a>';
-				echo '<a>'.$row['name'].' </a>';
-            	echo '<b>'.$row['name_short'].'</b>';
-				echo '<a> '.$row['location_city'].', '.$row['location_state'].', '.$row['location_country'].'</a>';
-				echo '</div><br>';
+				if($row['name'] != null){
+				echo '<div>'.
+				'<a>'.$row['team_number'].'</a>'.' - '.
+            	'<b>'.$row['nickname'].'</b>'.' - '.
+				'<a> '.$row['location'].'</a>'.' - '.
+				'<a>'.$row['name'].'</a>'.
+				'</div><br>';
+				}
 			}
         }
 		else{
@@ -180,6 +188,18 @@ class Database
 	function updatePassword($newPassword, $username){
 		/*ASK FOR AND CHECK OLD PASSWORD BEFORE CHANGING IT!*/
 		$q = "UPDATE users SET password='$newPassword' WHERE username='$username';";
+		mysqli_real_query($this->link,$q);
+	}
+	function updateTeam($data, $team){
+		$q = "UPDATE `teams` SET $data;";		
+		mysqli_real_query($this->link,$q);
+	}
+	function updateEvents($data){
+		$q = "INSERT INTO `events` SET $data;";		
+		mysqli_real_query($this->link,$q);
+	}
+	function updateAllTeams($data){
+		$q = "INSERT INTO `teams` SET $data;";		
 		mysqli_real_query($this->link,$q);
 	}
 	#--------->Get Information<---------#
