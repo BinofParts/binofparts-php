@@ -20,6 +20,11 @@ class Database
 		$this->link = mysqli_init();
 		mysqli_real_connect($this->link, $this->dbhost, $this->dbuser, $this->dbpass, $this->dbname);
 	}
+	#--------->Escape String<---------#
+	function escape_string($string){
+		$escapedstring = mysqli_real_escape_string($this->link,$value);
+		return $escapedstring;
+	}
 	#--------->Confirm Something is in the Database<---------#
 	function confirmUser($email){
 		/* Add slashes if necessary (for query) */
@@ -91,16 +96,15 @@ class Database
 	function displayTeamList(){
 		$query = "SELECT * FROM teams ORDER BY id";
 		$result = mysqli_query($this->link, $query);
-		echo'<div id="teamlist">';		
+		echo'<div id="teamlistview">';		
         if ($result) {
             while($row = mysqli_fetch_assoc($result)){
-				if($row['name'] != null){
-				echo '<div>'.
-				'<a>'.$row['team_number'].'</a>'.' - '.
-            	'<b>'.$row['nickname'].'</b>'.' - '.
-				'<a> '.$row['location'].'</a>'.' - '.
-				'<a>'.$row['name'].'</a>'.
-				'</div><br>';
+				if($row['name'] != null && $row['team_number'] > 0){
+					echo '<div>'.
+					'<a>'.$row['team_number'].'</a>'.' - '.
+	            	'<a href="/team/'.$row['team_number'].'"><b>'.$row['nickname'].'</b></a>'.' - '.
+					'<a> '.$row['location'].'</a>'.
+					'</div><br>';
 				}
 			}
         }
@@ -110,15 +114,14 @@ class Database
 		echo '</div>';
 	}
 	function displayEvents(){
-		$query = "SELECT id, name, location_arena, location_city, location_state, start_date, end_date FROM events ORDER BY start_date";
+		$query = "SELECT * FROM events ORDER BY start_date";
 		$result = mysqli_query($this->link, $query);
-		echo'<div id="eventlist">';		
+		echo'<div id="listevents">';		
         if ($result) {
             while($row = mysqli_fetch_assoc($result)){
 				echo '<div>';
 				echo '<a>'.$row['start_date'].' - '.$row['end_date'].' </a>';
-            	echo '<b>'.$row['name'].'</b>';
-				echo '<a> '.$row['location_arena'].', '.$row['location_city'].', '.$row['location_state'].'</a>';
+            	echo '<a href="/event/'.$row['key'].'"><b>'.$row['name'].'</b></a>';
 				echo '</div>';
 			}
         }
@@ -197,6 +200,7 @@ class Database
 	function updateEvents($data){
 		$q = "INSERT INTO `events` SET $data;";		
 		mysqli_real_query($this->link,$q);
+		echo mysqli_errno($this->link) . ": " . mysqli_error($this->link) . "\n";
 	}
 	function updateAllTeams($data){
 		$q = "INSERT INTO `teams` SET $data;";		
@@ -232,28 +236,57 @@ class Database
 		$password = $bcrypt->hash($pass);
 		return $password;
 	}
-	function createNewUser($team, $firstname, $lastname, $email,$password,$type){
-		//Check if team exists
+	function createNewUser($team, $firstname, $lastname, $email, $password, $type){
+
 		$team = stripslashes(mysqli_real_escape_string($this->link, $team));
-		$teamcheck = "SELECT number FROM teams WHERE number = '$team';";
-		$result = mysqli_query($this->link, $teamcheck);
-		if(mysqli_num_rows($result) < 1)
-		{
-			die ("Sorry, that team isn't in our system.");
+
+		//check if team_number is only numbers
+		if(ctype_digit($team)){
+			//Check if team exists
+			$teamcheck = "SELECT team_number FROM teams WHERE team_number = '$team';";
+			$result = mysqli_query($this->link, $teamcheck);
+			if(mysqli_num_rows($result) < 1)
+			{
+				$_SESSION['error'] = "Sorry, that team isn't in our system.";
+				mysqli_free_result($result);
+				return;
+			}
 		}
-		//TODO:check password for length and illegal caracters
+		else{
+			$_SESSION['error'] = "Your team may only contain numbers.";
+			return;
+		}
+
+		//check first & last name for length and illegal caracters
+		$firstname = stripslashes(mysqli_real_escape_string($this->link, $firstname));
+		$lastname = stripslashes(mysqli_real_escape_string($this->link, $lastname));
+
+		if(!ctype_alpha($firstname) || !ctype_alpha($lastname)){
+			$_SESSION['error'] = "Your name may only contain letters.";
+			return;
+		}
+
 		//TODO:check email is an actual email address
-		
-		//check if email taken
-		$email = stripslashes(mysqli_real_escape_string($this->link, $email));
+		if(filter_var($email,FILTER_VALIDATE_EMAIL) === false)
+		{
+		   $_SESSION['error'] = "Sorry, that email address is invalid.";
+				return;
+		}
+	
+		//check if email is taken
 		$emailcheck = "SELECT email FROM login WHERE email = '$email';";
 		$result2 = mysqli_query($this->link, $emailcheck);
 		if(mysqli_num_rows($result2) == 1) //email already registered
 		{
-			die ("that email already registered an account.");
+			$_SESSION['error'] = "That email has already registered an account.";
+			return;
 		}
+
+		//create user...
 		$query = "INSERT INTO login (team, namefirst, namelast, email, pass, type) VALUES ('$team', '$firstname', '$lastname', '$email', '$password', '$type');";
 		mysqli_real_query($this->link, $query);
+		mysqli_free_result($result2);
+	    mysqli_close($this->link);
 	}
 	#--------->Check Information<---------#
 	function checkEmailExist($email){
@@ -263,16 +296,20 @@ class Database
 		
 		if (!$result || mysqli_num_rows($result) < 1)
 		{
+			mysqli_free_result($result);
+	    	mysqli_close($link);
 			return false;
 		}
 		else{
+			mysqli_free_result($result);
+	    	mysqli_close($link);
 			return true;
 		}
 	}
 	function checkPassword($email, $password){
 		//Grab the password from db
 		$username = mysqli_real_escape_string($this->link, $email);
-		$query = "SELECT pass FROM login WHERE email = '$email';";
+		$query = "SELECT pass, verify FROM login WHERE email = '$email';";
 		$result = mysqli_query($this->link, $query);
 
 		//That user isnt in the db...
@@ -283,6 +320,22 @@ class Database
 
 		//Put row into an array
 		$userData = mysqli_fetch_assoc($result);
+
+		mysqli_free_result($result);
+	    mysqli_close($this->link);
+
+		//check if verified
+	    if ($userData['verify'] != Y) {
+	    	if ($userData['verify'] == N) {
+	    		return 3;
+	    	}
+	    	else if ($userData['verify'] == D) {
+	    		return 4;
+	    	}
+	    	else if ($userData['verify'] == A) {
+	    		return 5;
+	    	}
+	    }
 		
 		//check the password
 		$bcrypt = new Bcrypt(10);
@@ -299,8 +352,23 @@ class Database
 		}
 
 
-		mysqli_free_result($result);
-	    mysqli_close($link);
+		
+	}
+	function checkTeamsLastUpdated(){
+		$q = "SHOW TABLE STATUS FROM robotics LIKE 'teams';";		
+		$result = mysqli_query($this->link,$q);
+		
+		while($array = mysqli_fetch_array($result)) {
+			echo $array['Update_time']; 
+		}
+	}
+	function checkEventsLastUpdated(){
+		$q = "SHOW TABLE STATUS FROM robotics LIKE 'events';";		
+		$result = mysqli_query($this->link,$q);
+		
+		while($array = mysqli_fetch_array($result)) {
+			echo $array['Update_time']; 
+		}
 	}
 };
 

@@ -1,5 +1,8 @@
 <?php 
-include("../database.php"); 
+include('../session.php');
+if(!$session->logged_in || $session->admin != 'Y'){
+	header('Location: /');
+}
 
 for ($i = 1; $i < 10; $i++) {
 $url = "http://www.thebluealliance.com/api/v1/teams/show?teams=frc$i";

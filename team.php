@@ -17,7 +17,6 @@ if(!$session->logged_in){
 				<div id="banner_container"><div id="banner_img" style="background-image: url(/upload/teambanners/1612.png);
 					background-position: center bottom, left top;
 					background-repeat: no-repeat;"></div></div>
-				<div id="team-name"><a>Team 1612</a></div>
 				</div>
 				<div id="team_bottom">
 				<?php 	if(!isset($_GET['n'])){
