@@ -3,7 +3,7 @@
 <?php if($session->logged_in){ ?>
 <ul id="<?php echo basename($_SERVER['PHP_SELF'],'.php') ?>">
 	<li id="index"><a href="/index.php">Home<a></li>
-	<li id="feed"><a href="/feed.php">Parts Feed<a></li>
+	<li id="inventory"><a href="/inventory.php">Inventory<a></li>
 	<li id="team"><a href="/myteam">My Team</a></li>
 	<li id="kop"><a href="/kop">Kit of Parts</a></li>
 	<li id="teamlist"><a href="/teamlist.php">Teams</a></li>

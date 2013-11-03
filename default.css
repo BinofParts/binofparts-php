@@ -48,12 +48,12 @@ a:active {
 .login-logo{
 	padding-top:80px;
 	margin:auto;
-	width:95px;
+	width:300px;
 }
 .register-logo{
 	padding-top:80px;
 	margin:auto;
-	width:95px;
+	width:300px;
 }
 #error-box{
 	color: #b94a48;
@@ -203,7 +203,7 @@ a:active {
 #bottombox{
 	margin:auto;
 	margin-top:15px;
-	width:215px;
+	width:216px;
 	height:25px;
 	padding-top:5px;
 	/*background-color:#DDDDDD;
@@ -216,7 +216,7 @@ a:active {
 #bottomboxlogin{
 	margin:auto;
 	margin-top:15px;
-	width:215px;
+	width:216px;
 	height:25px;
 	padding-top:20px;
 	/*background-color:#DDDDDD;
@@ -294,13 +294,13 @@ a:active {
 	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
 	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;
 }
-#feed #feed{
+#inventory #inventory{
 	background-color:#FAFAFA;
 	box-shadow: inset -4px 0 0 -1px #1fc200;
 	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
 	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;
 }
-#feed #feed a:hover{
+#inventory #inventory a:hover{
 	box-shadow: inset -4px 0 0 -1px #1fc200;
 	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
 	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;

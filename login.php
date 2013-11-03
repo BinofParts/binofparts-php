@@ -12,7 +12,7 @@ if($session->logged_in){
 			<div id="background">
 			
 			</div>
-			<div class="login-logo"><img src="/images/bop2.png" alt="BoP Logo" width="95"></div>
+			<div class="login-logo"><img src="/images/bop-logo-beta-full.png" alt="BoP Logo" width="300"></div>
 			<div id="loginbox">
 			<form name="login" id="loginform" action="process.php" method="post">
 				<?php 

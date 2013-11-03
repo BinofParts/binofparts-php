@@ -1,7 +1,13 @@
+Options +FollowSymLinks -MultiViews
 RewriteEngine on
+RewriteBase /
 
-RewriteRule ^kop$ kop.php$1
-RewriteRule ^kop/([0-9]+)$ kop.php?y=$1
-RewriteRule ^myteam$ team.php$1
-RewriteRule ^team/([0-9]+)$ team.php?n=$1
-RewriteRule ^event/([A-Za-z0-9_]+)$ event.php?n=$1
+RewriteCond %{THE_REQUEST} ^.*/index\.php 
+RewriteRule ^(.*)index.php$ /$1 [R=301,L] 
+
+
+RewriteRule ^kop?$ kop.php$1
+RewriteRule ^kop/([0-9]+)?$ kop.php?y=$1
+RewriteRule ^myteam?$ team.php$1
+RewriteRule ^team/([0-9]+)?$ team.php?n=$1
+RewriteRule ^event/([A-Za-z0-9_]+)?$ event.php?n=$1
