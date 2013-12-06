@@ -13,11 +13,12 @@ if(!$session->logged_in){
 	<div id="content">
 			<?php include_once("sidebar.php"); ?>
 			<div id="display">
-				<?php echo 'This is the homepage.';
-					//TODO: Add Homepage Here
+				<?php 
+					//$database->displayInventoryHistory();
+					//$database->displayInventory();
+					//$database->displayInventory();
 				?>
 			</div>
-			<?php include_once("footer.php"); ?>
 	</div>
 </body>
 </html>
