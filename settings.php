@@ -15,7 +15,7 @@ if(!$session->logged_in){
 			<div id="display">
 			 	This will be the settings page.
 				<?php if($session->admin == 'Y'){
-					echo '<a href="/admin.php">Admin Page</a>';
+					echo '<a href="/admin">Admin Page</a>';
 				}?>
 			</div>
 	</div>
