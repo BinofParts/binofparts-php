@@ -1,12 +1,11 @@
 <?php
 
-include("process.php");
-$log = new Process();
+include("database.php");
 if($_REQUEST['action'] == "login"){
-    if($log->login($_REQUEST['username'], $_REQUEST['password']) == true){
-        //do something on successful login
+    if($database->login($_REQUEST['email'], $_REQUEST['pass']) == true){
+        header('Location: /');
     }else{
-        //do something on FAILED login
+		header('Location: login.php');
     }
 }
 
