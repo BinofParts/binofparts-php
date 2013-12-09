@@ -121,42 +121,73 @@ class Database
 		else{
 			$_SESSION['error'] = true;
 		}
-		header('Location: forgotpassword.php');
+		$to = stripslashes($username);
+        //some injection protection
+        $illegals=array("%0A","%0D","%0a","%0d","bcc:","Content-Type","BCC:","Bcc:","Cc:","CC:","TO:","To:","cc:","to:");
+        $to = str_replace($illegals, "", $to);
+        $getemail = explode("@",$to);
+ 
+        //send only if there is one email
+        if(sizeof($getemail) > 2){
+            return false;
+        }else{
+            //send email
+            $from = $_SERVER['SERVER_NAME'];
+            $subject = "Password Reset: ".$_SERVER['SERVER_NAME'];
+            $msg = "
+ 
+Your new password is: ".$newpassword."
+ 
+";
+ 
+            //now we need to set mail headers
+            $headers = "MIME-Version: 1.0 rn" ;
+            $headers .= "Content-Type: text/html; \r\n" ;
+            $headers .= "From: $from  \r\n" ;
+ 
+            //now we are ready to send mail
+            $sent = mail($to, $subject, $msg, $headers);
+            if($sent){
+                return true;
+            }else{
+                return false;
+            }
+        }
+		//header('Location: forgotpassword.php');
 	}
-	function register(){
-		global $database;
-		session_start();
-		
-		$required = array('team','namefirst','namelast','email','pass','type');
+	function register($team, $namefirst, $namelast, $email, $pass, $type){		
 
-		$_SESSION['team'] = $_POST['team'];
-		$_SESSION['namefirst'] = $_POST['namefirst'];
-		$_SESSION['namelast'] = $_POST['namelast'];
-		$_SESSION['email'] = $_POST['email'];
+		$_SESSION['team'] = $team;
+		$_SESSION['namefirst'] = $namefirst;
+		$_SESSION['namelast'] = $namelast;
+		$_SESSION['email'] = $email;
 
 		$error = false;
+
+		$required = array($team, $namefirst, $namelast, $email, $pass, $type);
+
 		foreach($required as $field) {
-		  	if (empty($_POST[$field]) && $_POST[$field] !== '0') {
+		  	if (empty($field)) {
 		    	$error = true;
 		  	}
 		}
 
-		if ($error) {
+		if ($error == true) {
 			$_SESSION['error'] = "All fields are required.";
-			header('Location: /register.php');
+			return false;
 		} else {
-			if(strlen($_POST['pass']) < 6){
+			if(strlen($pass) < 6){
 				$_SESSION['error'] = 'Password must be minimum 6 characters long.';
-				header('Location: /register.php');
+				return false;
 			}
 			else{
-				$password = $database->createPassword($_POST['pass']);
-				$database->createNewUser($_POST['team'], $_POST['namefirst'], $_POST['namelast'], $_POST['email'], $password, $_POST['type']);
+				$password = $this->createPassword($pass);
+				$this->createNewUser($team, $namefirst, $namelast, $email, $password, $type);
 				if(isset($_SESSION['error'])){
-					header('Location: /register.php');
+					return false;
 				}
 				else{
-					header('Location: /');
+					return true;
 				}
 			}
 		}
@@ -395,11 +426,10 @@ class Database
 		if(ctype_digit($team)){
 			//Check if team exists
 			$teamcheck = "SELECT team_number FROM teams WHERE team_number = '$team';";
-			$result = mysqli_query($this->link, $teamcheck);
+			$result = $this->qry($teamcheck);
 			if(mysqli_num_rows($result) < 1)
 			{
 				$_SESSION['error'] = "Sorry, that team isn't in our system.";
-				mysqli_free_result($result);
 				return;
 			}
 		}
@@ -426,7 +456,7 @@ class Database
 	
 		//check if email is taken
 		$emailcheck = "SELECT email FROM login WHERE email = '$email';";
-		$result2 = mysqli_query($this->link, $emailcheck);
+		$result2 = $this->qry($emailcheck);
 		if(mysqli_num_rows($result2) == 1) //email already registered
 		{
 			$_SESSION['error'] = "That email has already registered an account.";
@@ -435,9 +465,7 @@ class Database
 
 		//create user...
 		$query = "INSERT INTO login (team, namefirst, namelast, email, pass, type) VALUES ('$team', '$firstname', '$lastname', '$email', '$password', '$type');";
-		mysqli_real_query($this->link, $query);
-		mysqli_free_result($result2);
-	    mysqli_close($this->link);
+		$this->qry($query);
 	}
 	#--------->Check Information<---------#
 	function checkEmailExist($email){
