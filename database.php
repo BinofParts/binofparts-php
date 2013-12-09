@@ -5,7 +5,7 @@
  * This class is all gimme gimme gimme.. You cant always get what you want!
  */
 
-error_reporting(0);
+//error_reporting(0);
 
 include("bcrypt.php");
 
@@ -27,7 +27,6 @@ class Database
 	}
 	//prevent injection
     function qry($query) {
-      $this->dbconnect();
       $args  = func_get_args();
       $query = array_shift($args);
       $query = str_replace("?", "%s", $query);
@@ -462,7 +461,7 @@ class Database
 		//Grab the password from db
 		$username = mysqli_real_escape_string($this->link, $email);
 		$query = "SELECT pass, verify FROM login WHERE email = '$email';";
-		$result = mysqli_query($this->link, $query);
+		$result = $this->qry($query);
 
 		//That user isnt in the db...
 		if(!$result || mysqli_num_rows($result) < 1)
@@ -472,9 +471,6 @@ class Database
 
 		//Put row into an array
 		$userData = mysqli_fetch_assoc($result);
-
-		mysqli_free_result($result);
-	    mysqli_close($this->link);
 
 		//check if verified
 	    if ($userData['verify'] != Y) {
