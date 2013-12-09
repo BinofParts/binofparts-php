@@ -11,7 +11,7 @@
 	<li id="settings"><a href="/settings.php">Settings<a></li>
 </ul>
 <ul id="sidebar-bottom">
-	<li><a href="/process.php">Logout<a></li>
+	<li><a href="/logout.php">Logout<a></li>
 </ul>
 <?php }else{?>
 <ul>
