@@ -1,10 +1,15 @@
 <?
 /**
  * This will take care of anything that requires a database connection.
- * This should only be included on process & session scripts.
+ * This should only be included on session scripts.
  * This class is all gimme gimme gimme.. You cant always get what you want!
  */
+
+error_reporting(0);
+
 include("bcrypt.php");
+
+session_start();
 
 class Database
 {
@@ -19,6 +24,153 @@ class Database
 	function Database(){
 		$this->link = mysqli_init();
 		mysqli_real_connect($this->link, $this->dbhost, $this->dbuser, $this->dbpass, $this->dbname);
+	}
+	//prevent injection
+    function qry($query) {
+      $this->dbconnect();
+      $args  = func_get_args();
+      $query = array_shift($args);
+      $query = str_replace("?", "%s", $query);
+      $args  = array_map('mysqli_real_escape_string', $args);
+      array_unshift($args,$query);
+      $query = call_user_func_array('sprintf',$args);
+      $result = mysqli_query($this->link, $query) or die(mysqli_error());
+          if($result){
+            return $result;
+          }else{
+             $error = "Error";
+             return $result;
+          }
+    }
+    #--------->Login/Register/Forgot Password<---------#
+    function login($email, $pass){		
+
+		if(empty($email) || empty($pass)){
+			$_SESSION['error'] = "All fields are required. ";
+			return false;
+		}
+		else{
+
+			$passwordcheck = $this->checkPassword($email, $pass);
+			
+			if($passwordcheck != 0){
+				if($passwordcheck == 1){
+					$_SESSION['error'] = "Sorry, that email is not registered.";
+					return false;
+				}else if($passwordcheck == 2){
+					$_SESSION['error'] = "That password was incorrect.";
+					return false;
+				}else if($passwordcheck == 3){
+					$_SESSION['error'] = "Your account was declined access. Please contact the lead mentor for your team if this is an error.";
+					return false;
+				}else if($passwordcheck == 4){
+					$_SESSION['error'] = "Your account has been disabled. If this is an error please contact us at info(at)binofparts.com";
+					return false;
+				}else if($passwordcheck == 5){
+					$_SESSION['error'] = "Your account is currently not verified. Please contact your teams lead mentor.";
+					return false;
+				}else{
+					$_SESSION['error'] = "Something went wrong while trying to login.";
+					return false;
+				}
+			}else{
+				if(isset($_COOKIE['username'])){
+				   setcookie("username", "", mktime()-300, "/");
+				}
+				unset($_SESSION['username']);
+
+				//TODO:
+				//check if user is verified before logging them in... add another password check in database file
+				//if not verified send to an unverified page
+				//handle disabled and unverified accounts on this separate page. Display message on how to fix it, ie. contact us or get lead mentor to verify them.
+
+
+				$_SESSION['username'] = $email;
+				
+				if (isset($_POST['remember'])){
+					setcookie("username", $email, mktime()+86400, "/");
+				}
+
+				return true;
+			}
+		}
+	}
+	function newpassword(){
+		global $database;
+		
+		//compare password fields
+		if ($_POST['password1'] == $_POST['password2']){
+			$password = $database->createPassword($_POST['password1']);
+			$database->updatePassword($password, $_SESSION['username']); 
+		}
+		else if(empty($_POST['password1']) == $_POST['password2']){
+			
+		}
+		else{
+			//set session variable for error message
+		}
+		header('Location: settings.php');
+	}
+	function passreset(){
+		global $database, $mailer;
+		
+		$exist = $database->checkEmailExist($_POST['temail']);
+		if($exist){
+			$mailer->sendResetLink($_POST['temail']);
+			$_SESSION['error'] = false;
+		}
+		else{
+			$_SESSION['error'] = true;
+		}
+		header('Location: forgotpassword.php');
+	}
+	function register(){
+		global $database;
+		session_start();
+		
+		$required = array('team','namefirst','namelast','email','pass','type');
+
+		$_SESSION['team'] = $_POST['team'];
+		$_SESSION['namefirst'] = $_POST['namefirst'];
+		$_SESSION['namelast'] = $_POST['namelast'];
+		$_SESSION['email'] = $_POST['email'];
+
+		$error = false;
+		foreach($required as $field) {
+		  	if (empty($_POST[$field]) && $_POST[$field] !== '0') {
+		    	$error = true;
+		  	}
+		}
+
+		if ($error) {
+			$_SESSION['error'] = "All fields are required.";
+			header('Location: /register.php');
+		} else {
+			if(strlen($_POST['pass']) < 6){
+				$_SESSION['error'] = 'Password must be minimum 6 characters long.';
+				header('Location: /register.php');
+			}
+			else{
+				$password = $database->createPassword($_POST['pass']);
+				$database->createNewUser($_POST['team'], $_POST['namefirst'], $_POST['namelast'], $_POST['email'], $password, $_POST['type']);
+				if(isset($_SESSION['error'])){
+					header('Location: /register.php');
+				}
+				else{
+					header('Location: /');
+				}
+			}
+		}
+	}
+	function logout(){
+		if(isset($_COOKIE['username'])){
+		   setcookie("username", "", mktime()-300, "/");
+		}
+		unset($_SESSION['username']);
+		session_destroy();
+				
+		header('Location: /');
+
 	}
 	#--------->Escape String<---------#
 	function escape_string($string){
