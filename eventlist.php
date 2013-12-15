@@ -10,8 +10,9 @@ include('session.php');
 	<div id="content">
 			<?php include_once("sidebar.php"); ?>
 			<div id="display">
-			<?php $database->displayEvents(); ?>
-			</div>
+				<?php $database->displayEvents(); ?>
+			</div><!-- End Display -->
+			<?php include_once("footer.php"); ?>
 	</div>
 </body>
 </html>

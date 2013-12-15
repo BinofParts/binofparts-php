@@ -31,7 +31,8 @@ if(!$session->logged_in){
 		<?php include_once("sidebar.php"); ?>			
 		<div id="display">
 			<div id="change"><?php $database->displayLiveFeed();?></div>
-		</div>
+		</div><!-- End Display -->
+		<?php include_once("footer.php"); ?>
 	</div>
 </body>
 </html>

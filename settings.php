@@ -17,7 +17,8 @@ if(!$session->logged_in){
 				<?php if($session->admin == 'Y'){
 					echo '<a href="/admin">Admin Page</a>';
 				}?>
-			</div>
+			</div><!-- End Display -->
+			<?php include_once("footer.php"); ?>
 	</div>
 </body>
 </html>

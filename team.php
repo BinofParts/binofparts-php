@@ -27,7 +27,8 @@ if(!$session->logged_in){
 							echo 'Recent posts and team profile info here.';
 						}?>
 				</div>
-			</div>
+			</div><!-- End Display -->
+			<?php include_once("footer.php"); ?>
 	</div>
 </body>
 </html>

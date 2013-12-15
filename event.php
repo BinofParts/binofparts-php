@@ -18,7 +18,8 @@ if(!$session->logged_in && !isset($_GET['n'])){
 						echo 'Event Key-'.$_GET['n'];
 						?>
 				</div>
-			</div>
+			</div><!-- End Display -->
+			<?php include_once("footer.php"); ?>
 	</div>
 </body>
 </html>

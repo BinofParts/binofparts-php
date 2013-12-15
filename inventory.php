@@ -18,7 +18,8 @@ if(!$session->logged_in){
 					//$database->displayInventory();
 					//$database->displayInventory();
 				?>
-			</div>
+			</div><!-- End Display -->
+			<?php include_once("footer.php"); ?>
 	</div>
 </body>
 </html>
