@@ -1,3 +1,27 @@
+@media (min-width: 768px) {
+  	#display{
+    	width: 640px;
+    }
+    #content{
+		min-width:640px;
+	}
+}
+
+@media (min-width: 992px) {
+	#display{
+    	width: 800px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #display{
+    	width: 1024px;
+    }
+    #content{
+		min-width:1024px;
+	}
+}
+
 body, html {
     height: 100%;
 }
@@ -236,53 +260,56 @@ a:active {
 .sidebar{
 	position:fixed;
 	overflow:hidden;
-	height:100%;
-	width:175px;
+	height:45px;
+	width:100%;
 	margin:0;
 	padding:0;
-	min-height:340px;
+	min-width:800px;
 	z-index:20;
-	border-right: 1px solid #C5C5C5;
-	box-shadow: 2px 0px 4px -1px #D2D2D2 ;
+	border-bottom: 1px solid #C5C5C5;
+	/*box-shadow: 2px 0px 4px -1px #D2D2D2 ;
 	-moz-box-shadow: 2px 0px 4px -1px #D2D2D2 ;
-	-webkit-box-shadow: 2px 0px 4px -1px #D2D2D2 ;
+	-webkit-box-shadow: 2px 0px 4px -1px #D2D2D2 ;*/
 	background-color:#DDDDDD;
 }
 .sidebar-logo{
 	position:absolute;
-	padding-left:35px;
-	width:175px;
+	padding-left:15px;
 	cursor:pointer;
+	padding-top: 2px;
+}
+.sidebar-logo img{
+	/*width: 50px;*/
+	height: 40px;
 }
 .sidebar ul{
-	margin-top:75px;
-	width:175px;
-	display:block;
+	margin-left:210px;
 	list-style-type:none;
 	padding:0;
-	border-bottom:1px solid #C5C5C5;
+	border-right:1px solid #C5C5C5;
 }
 .sidebar li{
-	border-top:1px solid #C5C5C5;
+	float: left;
+	border-left:1px solid #C5C5C5;
 }
 .sidebar a:link,a:visited{
 	display:block;
 	color:#5C5C5C;
-	text-align:left;
+	text-align:middle;
 	padding:7px 0px 7px 20px;
 }
 .sidebar a:hover{
 	background-color:#FAFAFA;
-	/*box-shadow: inset -4px 0 0 -1px #1fc200;
+	box-shadow: inset -4px 0 0 -1px #1fc200;
 	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
-	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;*/
+	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;
 }
 #sidebar-bottom{
 	position:absolute;
 	width:175px;
 	margin:0;
 	padding:0;
-	bottom:0;
+	right:0;
 }
 #index #index{
 	background-color:#FAFAFA;
@@ -366,8 +393,8 @@ a:active {
 	color:#333333;
 }
 #display{
-	margin-left:175px;
-	padding:10px;
+	padding-top: 50px;
+	margin:auto;
 	min-height:340px;
 	background-color:#FAFAFA;
 }
