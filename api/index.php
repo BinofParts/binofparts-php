@@ -20,10 +20,11 @@ switch ($_POST['command']) {
 		
 	case "feed":
 		feed($_POST['lastid']);break;
-		
-	case "kop":
-		kop((int)$_POST['year']);break;
  
+}
+
+if (isset($_GET['kop'])) {
+	kop((int)$_GET['kop']);
 }
 
 exit();

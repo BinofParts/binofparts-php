@@ -31,6 +31,8 @@ function query() {
 	//execute and fetch the results
 	$result = mysqli_query($link, $sql);
 	if (mysqli_errno($link)==0 && $result) {
+
+		//return $result;
 		
 		$rows = array();
 
@@ -138,15 +140,22 @@ function kop($year) {
 	if ($year<=2012||$year>=2007) {
 		$kop = sprintf('kop%d',$year);
 		$result = query("SELECT * FROM $kop ORDER BY id");
+		/*$json = array();
+		while($row = mysqli_fetch_array ($result))     
+		{
+		    $bus = array(
+		        'id' => $row['id'],
+		        'name' => $row['name'],
+		        'description' => $row['description'],
+		        'picture' => './images/' . $year . 'kop' . $row['id'] . '.jpg'
+		    );
+		    array_push($json, $bus);
+		}*/
+		$jsonstring = json_encode($result);
+		echo $jsonstring;
 		
 	} else {
 		errorJson('Sorry we dont have this years kit of parts in our database. Do you have a copy of this years kit of parts? Send it to us in an email, and well be sure to update our database. :)');
-	}
- 
-	if (!$result['error']) {
-		print json_encode($result);
-	} else {
-		errorJson('Photo stream is broken');
 	}
 }
 
