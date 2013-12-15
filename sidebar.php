@@ -20,7 +20,7 @@
     </li>
 </ul>
 <?php }else{?>
-<ul>
+<ul id="<?php echo basename($_SERVER['PHP_SELF'],'.php') ?>">
 	<li id="kop"><a href="/kop">Kit of Parts</a></li>
 	<li id="teamlist"><a href="/teamlist.php">Teams</a></li>
 	<li id="eventlist"><a href="/eventlist.php">Events</a></li>

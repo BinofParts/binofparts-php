@@ -31,20 +31,32 @@
 		-moz-column-gap: 10px;
 		column-gap: 10px;
 	}
+	.partslist{
+		margin:auto;
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		column-count: 2;
+	}
 }
 
 @media (min-width: 1200px) {
     #display{
-    	width: 80%;
+    	width: 90%;
     }
     #teamlistview{
 		margin:auto;
 		-webkit-column-count: 3;
 		-moz-column-count: 3;
 		column-count: 3;
-		-webkit-column-gap: 10px;
-		-moz-column-gap: 10px;
-		column-gap: 10px;
+		-webkit-column-gap: 25px;
+		-moz-column-gap: 25px;
+		column-gap: 25px;
+	}
+	.partslist{
+		margin:auto;
+		-webkit-column-count: 3;
+		-moz-column-count: 3;
+		column-count: 3;
 	}
 }
 
@@ -492,38 +504,23 @@ a:active {
 	background-color:#FAFAFA;
 	z-index: 5;
 }
-.koptable{
-    border:none;
-	border-collapse:collapse;
+.partslist{
+	list-style-type: none;
 }
-.koptable tbody{
+.partslist > li{
+	width:320px;
+	height: 70px;
+	margin-bottom: 10px;
+	background-color:#eaeaea;
+	border:1px solid #C5C5C5;
+	border-radius: 3px;
 }
-.koptable th{
-	height:5px;
+.partslist > li > img{
+	height: 70px;
+	max-width: 90px;
 }
-.koptable tr{
-}
-.koptable tr.even{
-	background-color:#DDDDDD;
-}
-.koptable tr.odd{
-	background-color:#F2F2F2;
-}
-.koptable td{
-	height:50px;
-	border-right:1px solid #C5C5C5;
-}
-.koptable a{
-	color:#333333;
-	text-decoration:none;
-}
-.koptable a:link {
-	color:#333333;
-	text-decoration:underline;
-}
-.koptable a:visited {
-	color:#333333;
-	text-decoration:underline;
+.partslist > li > a{
+	background-color: #EEEEEE;
 }
 
 #banner_container {
@@ -544,9 +541,13 @@ a:active {
 #teamlistview{
 	margin:auto;
 }
-#teamlistview div{
-	width:384px;
-	overflow: 
+#teamlistview > div{
+	width:350px;
+	overflow: hidden; 
+}
+#teamlistview > div > .location{
+	margin-right: 20px;
+	float: right;
 }
 #team_top {
 	padding-bottom:10px;

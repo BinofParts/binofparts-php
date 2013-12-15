@@ -285,7 +285,7 @@ Your new password is: ".$newpassword."
 					echo '<div>'.
 					'<a>'.$row['team_number'].'</a>'.' - '.
 	            	'<a href="/team/'.$row['team_number'].'"><b>'.$row['nickname'].'</b></a>'.' - '.
-					'<a> '.$row['location'].'</a>'.
+					'<a class="location"> '.$row['location'].'</a>'.
 					'</div><br>';
 				}
 			}
@@ -342,32 +342,18 @@ Your new password is: ".$newpassword."
 		    echo('<div style="margin-top:25px; margin-left:50px;width:505px;">Sorry we dont have this years kit of parts in our database. Do you have a copy of this years kit of parts? Send it to us in an email, and well be sure to update our database. :)</div>');
 			return;
 		}
-	
-		echo '
-			<table class="koptable">
-			<tbody>
-				<th></th>
-				<th>Picture</th>
-				<th>Name</th>
-				<th>Description</th>
-				<th>Part Number</th>
-				<th>Quantity</th>';
+		echo '<ul class="partslist">';
 		while($row = mysqli_fetch_assoc($result))
 		{	
-			$alt = ( ($row['id'] % 2) ? 'odd' : 'even' );	
+			// $alt = ( ($row['id'] % 2) ? 'odd' : 'even' );	
 			echo '
-				<tr class="'.$alt.'">
-					<td><a>'.$row['id'].'</a></td>
-					<td><img src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg" width="70px"></td>
-					<td><a>'.$row['name'].'</a></td>
-					<td><a>'.$row['Description'].'</a></td>
-					<td><a>'.$row['number'].'</a></td>
-					<td><a>'.$row['qty'].'</a></td>
-				</tr>';
+				<li>
+					<img src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg">
+					<a>'.$row['name'].'</a>
+					<a>'.$row['qty'].'</a>
+				</li>';
 		}
-		echo '
-			</tbody>
-			</table>';
+		echo "</ul>";
 	}
 	#--------->Update Information<---------#
 	function updatePassword($newPassword, $username){

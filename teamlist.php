@@ -4,7 +4,7 @@ include('session.php');
 <!DOCTYPE html>
 <html>
 <head>
-<?php include_once("head.html"); ?>
+	<?php include_once("head.html"); ?>
 </head>
 <body>
 	<div id="content">

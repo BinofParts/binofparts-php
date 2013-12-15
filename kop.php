@@ -12,19 +12,18 @@ include('session.php');
 			<?php include_once("sidebar.php"); ?>
 			<div id="display">
 				<?php 
-				if ($_GET['y']<=2012&&$_GET['y']>=1992) {
+				if ($_GET['y']<=2013&&$_GET['y']>=1992) {
 					echo '<a href="/kop"><--- Back to View Another Year.</a>';
 					$database->displayKop($_GET['y']);
 				}
 				else{
-					echo 'Please select a year to view the kit of parts from that year.</br>
+					echo '
 					<ul>
-					<li><a href="kop/2012">2012 Kit of parts</a></li>
-					<li><a href="kop/2011">2011 Kit of parts</a></li>
-					<li><a href="kop/2010">2010 Kit of parts</a></li>
-					<li><a href="kop/2009">2009 Kit of parts</a></li>
-					<li><a href="kop/2008">2008 Kit of parts</a></li>
-					<li><a href="kop/2007">2007 Kit of parts</a></li>
+					<li><a href="/kop/2013"><img src="/images/2013-Game.jpg">2013 Kit of parts</a></li>
+					<li><a href="/kop/2012"><img src="/images/2012-Game.jpg">2012 Kit of parts</a></li>
+					<li><a href="/kop/2011"><img src="/images/2011-Game.jpg">2011 Kit of parts</a></li>
+					<li><a href="/kop/2010"><img src="/images/2010-Game.jpg">2010 Kit of parts</a></li>
+					<li><a href="/kop/2009"><img src="/images/2009-Game.jpg">2009 Kit of parts</a></li>
 					</ul>';
 				} ?>
 			</div><!-- End Display -->
