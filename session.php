@@ -49,12 +49,12 @@ class Session
 
 	         /* User is logged in, set class variables */
 	         $this->userinfo  = $database->getUserInfo($_SESSION['username']);
-	         $this->username  = $this->userinfo['email'];
+	         $this->useremail  = $this->userinfo['email'];
 			 $this->team     = $this->userinfo['team'];
 			 $this->type	=  $this->userinfo['type'];
-			 $this->name	=  $this->userinfo['namefirst'];
-			 $this->name	.= " ";
-			 $this->name	.=  $this->userinfo['namelast'];
+			 $this->username	=  $this->userinfo['namefirst'];
+			 $this->username	.= " ";
+			 $this->username	.=  $this->userinfo['namelast'];
 			 $this->admin = $this->userinfo['admin'];
 			 //$this->joindate  = $this->userinfo['joindate'];
 	         return true;
