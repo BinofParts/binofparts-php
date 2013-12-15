@@ -66,7 +66,7 @@ class Database
 					$_SESSION['error'] = "Your account has been disabled. If this is an error please contact us at info(at)binofparts.com";
 					return false;
 				}else if($passwordcheck == 5){
-					$_SESSION['error'] = "Your account is currently not verified. Please contact your teams lead mentor.";
+					$_SESSION['error'] = "Your account isn't verified. Please contact a mentor for your team.";
 					return false;
 				}else{
 					$_SESSION['error'] = "Something went wrong while trying to login.";

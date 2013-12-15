@@ -1,7 +1,7 @@
 <?php 
 include('session.php');
 if(!$session->logged_in){
-	header('Location: login.php');
+	header('Location: kop.php');
 }
 ?>
 <!DOCTYPE html>
