@@ -9,27 +9,26 @@ if($session->logged_in){
 <?php include_once("head.html"); ?>
 <body>
 	<div id="content">
-			<div id="background">
-			
-			</div>
+		<div class="container">
 			<div class="login-logo"><img src="images/bop-logo-beta-full.png" alt="BoP Logo" width="300"></div>
 			<div id="loginbox">
-			<form name="login" id="loginform" action="form_action.php" method="post">
-				<?php 
-					if(isset($_SESSION['error'])){
-						echo '<div id="error-box">'.
-						$_SESSION['error'].'</div>';
-					}
-					unset($_SESSION['error']);
-						?>
-				<label>Email:</label><input class="input" type="text" name="email" /></br>
-				<label>Password:</label><input type="password" name="pass" /></br>
-				<input type="checkbox" id="checkbox" name="remember"/><label for="checkbox" id="checkboxlabel">Keep me logged in.</label></br>
-				<input name="action" id="action" value="login" type="hidden">
-				<button type="submit" id="loginbtn" value="Login"/>Login</button></br>
-			</form>
-			<div id="bottomboxlogin"><i>Don't have an account?</i><a id="reg-link" href="register.php"/>Register</a></div>
+				<form name="login" id="loginform" action="form_action.php" method="post">
+					<?php 
+						if(isset($_SESSION['error'])){
+							echo '<div id="error-box">'.
+							$_SESSION['error'].'</div>';
+						}
+						unset($_SESSION['error']);
+							?>
+					<label>Email:</label><input class="input" type="text" name="email" /></br>
+					<label>Password:</label><input type="password" name="pass" /></br>
+					<input type="checkbox" id="checkbox" name="remember"/><label for="checkbox" id="checkboxlabel">Keep me logged in.</label></br>
+					<input name="action" id="action" value="login" type="hidden">
+					<button type="submit" id="loginbtn" value="Login"/>Login</button></br>
+				</form>
+				<div id="bottomboxlogin"><i>Don't have an account?</i><a id="reg-link" href="register.php"/>Register</a></div>
 			</div>
+		</div>
 	</div>
 </body>
 </html>

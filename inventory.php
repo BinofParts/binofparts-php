@@ -12,7 +12,7 @@ if(!$session->logged_in){
 <body>
 	<div id="content">
 			<?php include_once("sidebar.php"); ?>
-			<div id="display">
+			<div class="container">
 				<?php 
 					//$database->displayInventoryHistory();
 					//$database->displayInventory();

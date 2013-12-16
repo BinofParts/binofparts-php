@@ -1,34 +1,62 @@
-<div class="clear"></div>
-<div class="sidebar">
-<div class="sidebar-wrapper">
-	<div class="sidebar-logo" onclick="document.location.href='/index.php'"><img src="/images/bop-logo-beta-full.png" alt="BoP Logo" ></div>
+<nav class="bop-navbar navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand hidden-xs" href="/">Bin of Parts</a>
+    <a class="navbar-brand visible-xs" href="/">BoP</a>
+  </div>
 <?php if($session->logged_in){ ?>
-<ul id="<?php echo basename($_SERVER['PHP_SELF'],'.php') ?>">
-	<li id="index"><a href="/index.php">Home</a></li>
-	<li id="inventory"><a href="/inventory.php">Inventory</a></li>
-	<li id="kop"><a href="/kop">Kit of Parts</a></li>
-	<li id="teamlist"><a href="/teamlist.php">Teams</a></li>
-	<li id="eventlist"><a href="/eventlist.php">Events</a></li>
-</ul>
-<ul id="sidebar-bottom">
-	<li><a href="/myteam"><?php echo $session->username ?>  <span class="caret"></span></a>
-            <ul>
-                <li id="team"><a href="/myteam">My Team</a></li>
-                <li id="settings"><a href="/settings.php">Settings</a></li>
-                <li><a href="/logout.php">Logout</a></li>
-            </ul>
-    </li>
-</ul>
+<ul class="nav navbar-nav">
+    <li><a href="/kop">Kit of Parts</a></li>
+    <li class="hidden-xs"><a href="/teamlist.php">Teams</a></li>
+    <li class="hidden-xs"><a href="/eventlist.php">Events</a></li>
+  </ul>
+
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+		  <li class="visible-xs"><a href="/teamlist.php">Teams</a></li>
+		  <li class="visible-xs"><a href="/eventlist.php">Events</a></li>
+    </ul>
+    <form class="navbar-form navbar-left" role="search">
+      	<div class="form-group">
+        	<input type="text" class="form-control" placeholder="Search">
+      	</div>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+      	<li class="dropdown">
+        	<a href="/myteam" class="dropdown-toggle" data-toggle="dropdown"><?php echo $session->username ?> <b class="caret"></b></a>
+        	<ul class="dropdown-menu">
+          		<li id="team"><a href="/myteam">My Team</a></li>
+            	<li id="settings"><a href="/settings.php">Settings</a></li>
+	    		<li class="divider"></li>
+          		<li><a href="/logout.php">Logout</a></li>
+        	</ul>
+      	</li>
+    </ul>
+</div><!-- /.navbar-collapse -->
 <?php }else{?>
-<ul id="<?php echo basename($_SERVER['PHP_SELF'],'.php') ?>">
-	<li id="kop"><a href="/kop">Kit of Parts</a></li>
-	<li id="teamlist"><a href="/teamlist.php">Teams</a></li>
-	<li id="eventlist"><a href="/eventlist.php">Events</a></li>
-</ul>
-<ul id="sidebar-bottom">
-	<li><a href="/login.php">Login</a></li>
-	<li><a href="/register.php">Register</a></li>
-</ul>
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+		<li><a href="/kop">Kit of Parts</a></li>
+		<li><a href="/teamlist.php">Teams</a></li>
+		<li><a href="/eventlist.php">Events</a></li>
+    </ul>
+    <form class="navbar-form navbar-left" role="search">
+      	<div class="form-group">
+        	<input type="text" class="form-control" placeholder="Search">
+      	</div>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+      	<li><a href="/login.php">Login</a></li>
+		<li><a href="/register.php">Register</a></li>
+    </ul>
+</div>
 <?php }?>
-</div>
-</div>
+  
+  </div>
+</nav>

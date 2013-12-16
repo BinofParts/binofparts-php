@@ -278,39 +278,43 @@ Your new password is: ".$newpassword."
 	function displayTeamList(){
 		$query = "SELECT * FROM teams ORDER BY id";
 		$result = mysqli_query($this->link, $query);
-		echo'<div id="teamlistview">';		
+		echo'<table class="table table-striped table-condensed table-center team-table"><tbody>';
+		echo '<thead><tr><th>Team Number</th><th>Team Name</th><th>Location</th></tr></thead>';	
         if ($result) {
             while($row = mysqli_fetch_assoc($result)){
 				if($row['name'] != null && $row['team_number'] > 0){
-					echo '<div>'.
-					'<a>'.$row['team_number'].'</a>'.' - '.
-	            	'<a href="/team/'.$row['team_number'].'"><b>'.$row['nickname'].'</b></a>'.' - '.
-					'<a class="location"> '.$row['location'].'</a>'.
-					'</div><br>';
+					echo '<tr>'.
+					'<td><a>'.$row['team_number'].'</a>'.'</td> '.
+	            	'<td><a href="/team/'.$row['team_number'].'"><b>'.$row['nickname'].'</b></a>'.'</td> '.
+					'<td> '.$row['location'].'</td>'.
+					'</tr>';
 				}
 			}
         }
 		else{
 			echo 'No Teams in database';
 		}
-		echo '</div>';
+		echo '</tbody></table>';
 	}
 	function displayEvents(){
 		$query = "SELECT * FROM events ORDER BY start_date";
 		$result = mysqli_query($this->link, $query);
-		echo'<div id="listevents">';		
+		echo'<table class="table table-striped table-condensed table-center team-table"><tbody>';
+		echo '<thead><tr><th>Events</th><th>Dates</th></tr></thead>';			
         if ($result) {
             while($row = mysqli_fetch_assoc($result)){
-				echo '<div>';
-				echo '<a>'.$row['start_date'].' - '.$row['end_date'].' </a>';
-            	echo '<a href="/event/'.$row['key'].'"><b>'.$row['name'].'</b></a>';
-				echo '</div>';
+				echo '<tr>';
+				echo '<td><a href="/event/'.$row['key'].'"><b>'.$row['name'].'</b></a></td>';
+				$start_date = date('M jS', strtotime($row['start_date']));
+				$end_date = date('M jS, Y', strtotime($row['end_date']));
+				echo '<td>'.$start_date.' to '.$end_date.'</td>';
+				echo '</tr>';
 			}
         }
 		else{
 			echo 'Currently No Events';
 		}
-		echo '</div>';
+		echo '</tbody></table>';
 	}
 	function displayLiveFeed(){		
 		$query = "SELECT * FROM trades ORDER BY id DESC limit 20";
@@ -342,15 +346,17 @@ Your new password is: ".$newpassword."
 		    echo('<div style="margin-top:25px; margin-left:50px;width:505px;">Sorry we dont have this years kit of parts in our database. Do you have a copy of this years kit of parts? Send it to us in an email, and well be sure to update our database. :)</div>');
 			return;
 		}
-		echo '<ul class="partslist">';
+		echo '<ul class="media-list">';
 		while($row = mysqli_fetch_assoc($result))
 		{	
 			// $alt = ( ($row['id'] % 2) ? 'odd' : 'even' );	
 			echo '
-				<li>
-					<img src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg">
-					<a>'.$row['name'].'</a>
-					<a>'.$row['qty'].'</a>
+				<li class="media">
+					<a class="pull-left"> <img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg" width="70"/> </a>
+					<div class="media-body">
+						<h4 class="media-heading">'.$row['name'].'</h4>
+						<a>'.$row['qty'].'</a>
+					</div>
 				</li>';
 		}
 		echo "</ul>";

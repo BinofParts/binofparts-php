@@ -9,7 +9,7 @@ include('session.php');
 <body>
 	<div id="content">
 			<?php include_once("sidebar.php"); ?>
-			<div id="display">
+			<div class="container">
 				<?php $database->displayTeamList(); ?>
 			</div><!-- End Display -->
 			<?php include_once("footer.php"); ?>

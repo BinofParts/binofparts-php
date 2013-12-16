@@ -29,7 +29,7 @@ if(!$session->logged_in){
 <body>
 	<div id="content">
 		<?php include_once("sidebar.php"); ?>			
-		<div id="display">
+		<div class="container">
 			<div id="change"><?php $database->displayLiveFeed();?></div>
 		</div><!-- End Display -->
 		<?php include_once("footer.php"); ?>

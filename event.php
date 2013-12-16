@@ -12,7 +12,7 @@ if(!$session->logged_in && !isset($_GET['n'])){
 <body>
 	<div id="content">
 			<?php include_once("sidebar.php"); ?>
-			<div id="display">
+			<div class="container">
 				<div id="event_bottom">
 				<?php 	
 						echo 'Event Key-'.$_GET['n'];

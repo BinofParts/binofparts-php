@@ -12,7 +12,7 @@ if(!$session->logged_in){
 <body>
 	<div id="content">
 			<?php include_once("sidebar.php"); ?>
-			<div id="display">
+			<div class="container">
 				<div id="team_top">
 				<div id="banner_container"><div id="banner_img" style="background-image: url(/upload/teambanners/1612.png);
 					background-position: center bottom, left top;

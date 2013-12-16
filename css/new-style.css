@@ -1,0 +1,10 @@
+body { 
+	padding-top: 70px; 
+}
+.bop-navbar .navbar-nav > li > a:hover {
+	color: #1fc200;
+}
+.kop-game{
+	max-height: 150px;
+	vertical-align: middle;
+}
