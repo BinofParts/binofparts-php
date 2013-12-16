@@ -20,7 +20,7 @@ include('session.php');
 					?>
 					<div class="row">
 					  <div class="col-xs-12 col-sm-6">
-					    <a href="/kop/2013" class="thumbnail"><img class="kop-game" src="/images/2013-Game.jpg" />
+					    <a href="/kop/2013"><img class="kop-game img-thumbnail" src="/images/2013-Game.jpg" />
 						    <div class="caption">
 						        <h3>2013 Kit of Parts</h3>
 						    </div>

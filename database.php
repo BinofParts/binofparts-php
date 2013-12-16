@@ -85,10 +85,7 @@ class Database
 
 
 				$_SESSION['username'] = $email;
-				
-				if (isset($_POST['remember'])){
-					setcookie("username", $email, mktime()+86400, "/");
-				}
+				setcookie("username", $email, mktime()+86400, "/");
 
 				return true;
 			}
