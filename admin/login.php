@@ -6,13 +6,13 @@ if($session->logged_in){
 ?>
 <!DOCTYPE html>
 <html>
-<?php include_once("head.html"); ?>
+<?php include_once("../head.html"); ?>
 <body>
 	<div id="content">
 		<div class="container">
 			<div class="row">
 				<div id="loginbox">
-				<div id="login-logo"><img src="images/bop-logo-beta-full.png" alt="BoP Logo" width="300"></div>
+				<div id="login-logo"><img src="/images/bop-logo-beta-full.png" alt="BoP Logo" width="300"></div>
 					<form name="login" id="loginform" role="form" action="form_action.php" method="post">
 						<?php 
 							if(isset($_SESSION['error'])){
@@ -41,7 +41,6 @@ if($session->logged_in){
 						<input name="action" id="action" value="login" type="hidden">
 						<button type="submit" id="loginbtn" value="Login"/>Login</button>
 					</form>
-					<div id="bottombox"><i>Don't have an account?</i><a id="reg-link" href="register.php"/>Register</a></div>
 				</div>
 			</div>
 		</div>
