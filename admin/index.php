@@ -1,7 +1,7 @@
 <?php 
-include('session.php');
+include('../session.php');
 if(!$session->logged_in || $session->admin != 'Y'){
-	header('Location: login.php');
+	header('Location: ../login.php');
 }
 ?>
 <!DOCTYPE html>

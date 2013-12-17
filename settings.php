@@ -1,5 +1,8 @@
 <?php 
 include('session.php');
+if(!$session->logged_in){
+	header('Location: login.php');
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,8 +12,11 @@ include('session.php');
 <body>
 	<div id="content">
 			<?php include_once("sidebar.php"); ?>
-			<div class="container">
-				<?php $database->displayTeamList(); ?>
+			<div id="display">
+			 	This will be the settings page.
+				<?php if($session->admin == 'Y'){
+					echo '<a href="/admin">Admin Page</a>';
+				}?>
 			</div><!-- End Display -->
 			<?php include_once("footer.php"); ?>
 	</div>

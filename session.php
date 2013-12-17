@@ -1,9 +1,10 @@
 <?
 /**
  * This will take care of checking if the user is logged in. 
- * Also will see if they are an admin.
+ * Also will see if they are an admin. 
+ * Should be included on every page.
  */
-include("../database.php");
+include("database.php");
 
 class Session
 {
@@ -49,6 +50,7 @@ class Session
 	         /* User is logged in, set class variables */
 	         $this->userinfo  = $database->getUserInfo($_SESSION['username']);
 	         $this->useremail  = $this->userinfo['email'];
+			 $this->team     = $this->userinfo['team'];
 			 $this->type	=  $this->userinfo['type'];
 			 $this->username	=  $this->userinfo['namefirst'];
 			 $this->username	.= " ";
