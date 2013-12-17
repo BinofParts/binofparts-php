@@ -20,33 +20,13 @@ include('session.php');
 					?>
 					<div class="row">
 					  <div class="col-xs-12 col-sm-6">
-					    <a href="/kop/2013"><img class="kop-game img-thumbnail" src="/images/2013-Game.jpg" />
-						    <div class="caption">
-						        <h3>2013 Kit of Parts</h3>
-						    </div>
-				      	</a>
-					    <a href="/kop/2012" class="thumbnail"><img class="kop-game" src="/images/2012-Game.jpg" />
-					    	<div class="caption">
-						        <h2>2012 Kit of Parts</h2>
-						    </div>
-					    </a>
+					    <a href="/kop/2013" class="thumbnail"><img class="kop-game" src="/images/2013-Game.jpg" /></a>
+					    <a href="/kop/2012" class="thumbnail"><img class="kop-game" src="/images/2012-Game.jpg" /></a>
 					  </div>
 					  <div class="col-xs-12 col-sm-6 ">
-					  	<a href="/kop/2011" class="thumbnail"><img class="kop-game" src="/images/2011-Game.jpg" />
-					  		<div class="caption">
-						        <h2>2011 Kit of Parts</h2>
-						    </div>
-					  	</a>
-					  	<a href="/kop/2010" class="thumbnail"><img class="kop-game" src="/images/2010-Game.jpg" />
-					  		<div class="caption">
-						        <h2>2010 Kit of Parts</h2>
-						    </div>
-					  	</a>
-						<a href="/kop/2009" class="thumbnail"><img class="kop-game" src="/images/2009-Game.jpg" />
-							<div class="caption">
-						        <h2>2009 Kit of Parts</h2>
-						    </div>
-						</a>
+					  	<a href="/kop/2011" class="thumbnail"><img class="kop-game" src="/images/2011-Game.jpg" /></a>
+					  	<a href="/kop/2010" class="thumbnail"><img class="kop-game" src="/images/2010-Game.jpg" /></a>
+						<a href="/kop/2009" class="thumbnail"><img class="kop-game" src="/images/2009-Game.jpg" /></a>
 					  </div>
 					</div>
 					<?php

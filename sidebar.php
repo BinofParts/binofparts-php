@@ -29,10 +29,10 @@
     </form>
     <ul class="nav navbar-nav navbar-right">
       	<li class="dropdown">
-        	<a href="/myteam" class="dropdown-toggle" data-toggle="dropdown"><?php echo $session->username ?> <b class="caret"></b></a>
+        	<a href="" class="dropdown-toggle" data-toggle="dropdown"><?php echo $session->username ?> <b class="caret"></b></a>
         	<ul class="dropdown-menu">
-          		<li id="team"><a href="/myteam">My Team</a></li>
-            	<li id="settings"><a href="/settings.php">Settings</a></li>
+          		<li><a href="/myteam">My Team</a></li>
+            	<li><a href="/settings.php">Settings</a></li>
 	    		<li class="divider"></li>
           		<li><a href="/logout.php">Logout</a></li>
         	</ul>
@@ -46,15 +46,15 @@
 		<li><a href="/teamlist.php">Teams</a></li>
 		<li><a href="/eventlist.php">Events</a></li>
     </ul>
-    <form class="navbar-form navbar-left" role="search">
+    <form class="navbar-form navbar-right" role="search">
       	<div class="form-group">
-        	<input type="text" class="form-control" placeholder="Search">
+        	<input type="text" class="form-control" placeholder="Search for Parts">
       	</div>
     </form>
-    <ul class="nav navbar-nav navbar-right">
+    <!-- <ul class="nav navbar-nav navbar-right">
       	<li><a href="/login.php">Login</a></li>
-		<li><a href="/register.php">Register</a></li>
-    </ul>
+		  <li><a href="/register.php">Register</a></li>
+    </ul> -->
 </div>
 <?php }?>
   
