@@ -42,7 +42,7 @@
 <?php }else{?>
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-		<li><a href="/kop">Kit of Parts</a></li>
+		<li><a href="/">Kit of Parts</a></li>
 		<li><a href="/teamlist.php">Teams</a></li>
 		<li><a href="/eventlist.php">Events</a></li>
     </ul>

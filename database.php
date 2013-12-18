@@ -1,8 +1,8 @@
 <?
 /**
  * This will take care of anything that requires a database connection.
- * This should only be included on session scripts.
- * This class is all gimme gimme gimme.. You cant always get what you want!
+ * Created By: Aaron Holland
+ *
  */
 
 //error_reporting(0);
@@ -281,8 +281,8 @@ Your new password is: ".$newpassword."
             while($row = mysqli_fetch_assoc($result)){
 				if($row['name'] != null && $row['team_number'] > 0){
 					echo '<tr>'.
-					'<td><a>'.$row['team_number'].'</a>'.'</td> '.
-	            	'<td><a href="/team/'.$row['team_number'].'"><b>'.$row['nickname'].'</b></a>'.'</td> '.
+					'<td><a href="http://thebluealliance.com/team/'.$row['team_number'].'" target="_blank">'.$row['team_number'].'</a>'.'</td> '.
+	            	'<td><a href="http://thebluealliance.com/team/'.$row['team_number'].'" target="_blank"><b>'.$row['nickname'].'</b></a>'.'</td> '.
 					'<td> '.$row['location'].'</td>'.
 					'</tr>';
 				}
@@ -301,7 +301,7 @@ Your new password is: ".$newpassword."
         if ($result) {
             while($row = mysqli_fetch_assoc($result)){
 				echo '<tr>';
-				echo '<td><a href="/event/'.$row['key'].'"><b>'.$row['name'].'</b></a></td>';
+				echo '<td><a href="http://thebluealliance.com/event/'.$row['key'].'" target="_blank"><b>'.$row['name'].'</b></a></td>';
 				$start_date = date('M jS', strtotime($row['start_date']));
 				$end_date = date('M jS, Y', strtotime($row['end_date']));
 				echo '<td>'.$start_date.' to '.$end_date.'</td>';
