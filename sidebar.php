@@ -1,5 +1,4 @@
 <nav class="bop-navbar navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
       <span class="sr-only">Toggle navigation</span>
@@ -7,8 +6,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand hidden-xs" href="/">Bin of Parts</a>
-    <a class="navbar-brand visible-xs" href="/">BoP</a>
+    <a class="navbar-brand" href="/"><img src="/images/bop2.png"></a>
   </div>
 <?php if($session->logged_in){ ?>
 <ul class="nav navbar-nav">
@@ -58,5 +56,4 @@
 </div>
 <?php }?>
   
-  </div>
 </nav>
