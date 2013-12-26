@@ -19,6 +19,9 @@ body {
 	max-height: 150px;
 	vertical-align: middle;
 }
+.media-list{
+	background-color: #DDDDDD;
+}
 .table-center td, .table-center th{
 	text-align: center;
 }

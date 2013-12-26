@@ -12,7 +12,6 @@ include('database.php');
 			<div class="container">
 				<?php 
 				if ($_GET['y']<=2013&&$_GET['y']>=1992) {
-					echo '<a href="/"><--- Back to View Another Year.</a>';
 					$database->displayKop($_GET['y']);
 				}
 				else{

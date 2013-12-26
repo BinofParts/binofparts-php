@@ -343,10 +343,31 @@ Your new password is: ".$newpassword."
 		    echo('<div style="margin-top:25px; margin-left:50px;width:505px;">Sorry we dont have this years kit of parts in our database. Do you have a copy of this years kit of parts? Send it to us in an email, and well be sure to update our database. :)</div>');
 			return;
 		}
-		echo '<ul class="media-list">';
+		
 		while($row = mysqli_fetch_assoc($result))
 		{	
-			// $alt = ( ($row['id'] % 2) ? 'odd' : 'even' );	
+			$input[] = $row;
+			$len = count($input);
+			$len = $len / 2;
+			$len = round($len,0);
+
+			$firsthalf = array_slice($input, 0, $len );
+			$secondhalf = array_slice($input, $len);
+		}
+		echo '<ul class="media-list col-md-6">';	
+		foreach ($firsthalf as $row){
+			echo '
+				<li class="media">
+					<a class="pull-left"> <img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg" width="70"/> </a>
+					<div class="media-body">
+						<h4 class="media-heading">'.$row['name'].'</h4>
+						<a>'.$row['qty'].'</a>
+					</div>
+				</li>';
+		}
+		echo "</ul>";
+		echo '<ul class="media-list col-md-6">';
+		foreach ($secondhalf as $row){
 			echo '
 				<li class="media">
 					<a class="pull-left"> <img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg" width="70"/> </a>
