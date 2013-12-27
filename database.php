@@ -358,11 +358,11 @@ Your new password is: ".$newpassword."
 		foreach ($firsthalf as $row){
 			echo '
 				<li class="media">
-					<a class="pull-left"> <img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg" width="70"/> </a>
+					<a class="left pull-left"> <img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg"/> </a>
 					<div class="media-body">
 						<h4 class="media-heading">'.$row['name'].'</h4>
-						<a>'.$row['qty'].'</a>
 					</div>
+					<div class="right pull-right"><a>QTY</a></br></br><a>'.$row['qty'].'</a></div>
 				</li>';
 		}
 		echo "</ul>";
@@ -370,11 +370,11 @@ Your new password is: ".$newpassword."
 		foreach ($secondhalf as $row){
 			echo '
 				<li class="media">
-					<a class="pull-left"> <img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg" width="70"/> </a>
+					<a class="left pull-left"> <img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg"/> </a>
 					<div class="media-body">
 						<h4 class="media-heading">'.$row['name'].'</h4>
-						<a>'.$row['qty'].'</a>
 					</div>
+					<div class="right pull-right"><a>QTY</a></br></br><a>'.$row['qty'].'</a></div>
 				</li>';
 		}
 		echo "</ul>";
