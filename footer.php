@@ -1,8 +1,14 @@
-<div id="footer" class="container">
-	<div class="row">
-		<div class="col-sm-6 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
-			<hr>
-			<a href="https://mixpanel.com/f/partner"><img src="//cdn.mxpnl.com/site_media/images/partner/badge_blue.png" alt="Mobile Analytics" /></a>
+<div id="footer">
+	<div class="container">
+		<hr>
+		<div class="footer col-sm-6 col-md-6 col-lg-6 col-sm-offset-3 col-lg-offset-3">
+			<a href="http://blog.binofparts.com">Blog</a> &middot;
+			<a href="https://facebook.com/binofparts">Facebook</a> &middot;
+			<a href="https://twitter.com/binofparts">Twitter</a>
+			<div class="pull-right">
+				<a href="https://mixpanel.com/f/partner"><img src="//cdn.mxpnl.com/site_media/images/partner/badge_blue.png" alt="Mobile Analytics" /></a>
+			</div>
+			<p>&copy; <?php echo date('Y'); ?> Bin of Parts, Inc</p>
 		</div>
 	</div>
 </div>
