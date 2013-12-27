@@ -41,8 +41,8 @@
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
 		<li><a href="/">Kit of Parts</a></li>
-		<li><a href="/teamlist.php">Teams</a></li>
-		<li><a href="/eventlist.php">Events</a></li>
+		<li><a href="/teams">Teams</a></li>
+		<li><a href="/events">Events</a></li>
     </ul>
     <form class="navbar-form navbar-right" role="search">
       	<div class="form-group">
