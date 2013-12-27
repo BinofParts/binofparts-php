@@ -41,6 +41,33 @@ class Database
              return $result;
           }
     }
+    function search($query){
+    	$mysqli_query = mysqli_query($this->link, "SELECT name FROM kop2012 WHERE upper(name) LIKE '%$query%' 
+           UNION
+           SELECT name FROM kop2011 WHERE upper(name) LIKE '%$query%'
+           UNION
+           SELECT name FROM kop2010 WHERE upper(name) LIKE '%$query%'
+           UNION
+           SELECT name FROM kop2009 WHERE upper(name) LIKE '%$query%'");
+		
+
+		/*This is for searching multiple things
+		$query = "(SELECT content, title, 'msg' as type FROM messages WHERE content LIKE '%" . 
+           $keyword . "%' OR title LIKE '%" . $keyword ."%') 
+           UNION
+           (SELECT content, title, 'topic' as type FROM topics WHERE content LIKE '%" . 
+           $keyword . "%' OR title LIKE '%" . $keyword ."%') 
+           UNION
+           (SELECT content, title, 'comment' as type FROM comments WHERE content LIKE '%" . 
+           $keyword . "%' OR title LIKE '%" . $keyword ."%')";
+         */
+
+		while($row = mysqli_fetch_assoc($mysqli_query)){
+			$array[] = $row['name'];
+		}
+
+		return $array;
+    }
     #--------->Login/Register/Forgot Password<---------#
     function login($email, $pass){		
 
@@ -357,7 +384,7 @@ Your new password is: ".$newpassword."
 		echo '<ul class="media-list col-md-6">';	
 		foreach ($firsthalf as $row){
 			echo '
-				<li class="media">
+				<li class="media" id="'.$row['name'].'">
 					<a class="left pull-left"> <img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg"/> </a>
 					<div class="media-body">
 						<h4 class="media-heading">'.$row['name'].'</h4>
@@ -369,7 +396,51 @@ Your new password is: ".$newpassword."
 		echo '<ul class="media-list col-md-6">';
 		foreach ($secondhalf as $row){
 			echo '
-				<li class="media">
+				<li class="media" id="'.$row['name'].'">
+					<a class="left pull-left"> <img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg"/> </a>
+					<div class="media-body">
+						<h4 class="media-heading">'.$row['name'].'</h4>
+					</div>
+					<div class="right pull-right"><a>QTY</a></br></br><a>'.$row['qty'].'</a></div>
+				</li>';
+		}
+		echo "</ul>";
+	}
+	function displayParts(){
+		$query = "SELECT * FROM $parts;";
+		$result = mysqli_query($this->link, $query);
+		
+		if (!$result || mysqli_num_rows($result) < 1 || mysqli_connect_errno()){
+		    echo('<div style="margin-top:25px; margin-left:50px;width:505px;">Please Refresh the page. We ran into an error loading the parts.</div>');
+			return;
+		}
+		
+		while($row = mysqli_fetch_assoc($result))
+		{	
+			$input[] = $row;
+			$len = count($input);
+			$len = $len / 2;
+			$len = round($len,0);
+
+			$firsthalf = array_slice($input, 0, $len );
+			$secondhalf = array_slice($input, $len);
+		}
+		echo '<ul class="media-list col-md-6">';	
+		foreach ($firsthalf as $row){
+			echo '
+				<li class="media" id="'.$row['name'].'">
+					<a class="left pull-left"> <img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg"/> </a>
+					<div class="media-body">
+						<h4 class="media-heading">'.$row['name'].'</h4>
+					</div>
+					<div class="right pull-right"><a>QTY</a></br></br><a>'.$row['qty'].'</a></div>
+				</li>';
+		}
+		echo "</ul>";
+		echo '<ul class="media-list col-md-6">';
+		foreach ($secondhalf as $row){
+			echo '
+				<li class="media" id="'.$row['name'].'">
 					<a class="left pull-left"> <img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg"/> </a>
 					<div class="media-body">
 						<h4 class="media-heading">'.$row['name'].'</h4>

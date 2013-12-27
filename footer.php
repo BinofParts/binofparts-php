@@ -15,3 +15,22 @@
 
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap3-typeahead.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $('input.typeahead').typeahead({
+    source: function (query, process) {
+      $.ajax({
+        url: 'search.php',
+        type: 'GET',
+        dataType: 'JSON',
+        data: 'q=' + query,
+        success: function(data) {
+          process(data);
+        }
+      });
+    }
+  });
+});
+</script>

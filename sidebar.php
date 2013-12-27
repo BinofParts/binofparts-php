@@ -22,7 +22,7 @@
     </ul>
     <form class="navbar-form navbar-left" role="search">
       	<div class="form-group">
-        	<input type="text" class="form-control" placeholder="Search">
+          <input class="typeahead form-control" type="text" data-provide="typeahead" autocomplete="off" placeholder="Search for Parts">
       	</div>
     </form>
     <ul class="nav navbar-nav navbar-right">
@@ -46,7 +46,7 @@
     </ul>
     <form class="navbar-form navbar-right" role="search">
       	<div class="form-group">
-        	<input type="text" class="form-control" placeholder="Search for Parts">
+        	<input class="typeahead form-control" type="text" data-provide="typeahead" autocomplete="off" placeholder="Search for Parts">
       	</div>
     </form>
     <!-- <ul class="nav navbar-nav navbar-right">

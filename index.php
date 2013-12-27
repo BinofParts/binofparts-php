@@ -31,6 +31,14 @@ include('database.php');
 				} ?>
 			</div>
 			<?php include_once("footer.php"); ?>
+			<script type="text/javascript">
+			$(function(){
+			  // get hash value
+			  var hash = window.location.hash;
+			  // now scroll to element with that id
+			  $('html, body').animate({ scrollTop: $(hash).offset().top });
+			});
+			</script>
 	</div>
 </body>
 </html>
