@@ -18,13 +18,13 @@ include('database.php');
 					?>
 					<div class="row">
 					  <div class="col-xs-12 col-sm-6">
-					    <a href="/kop/2013" class="thumbnail"><img class="kop-game" src="/images/2013-Game.jpg" /></a>
-					    <a href="/kop/2012" class="thumbnail"><img class="kop-game" src="/images/2012-Game.jpg" /></a>
+					    <a href="/kop/2013" class="kop-thumb thumbnail"><img class="kop-game" src="/images/2013-Game.jpg" /></a>
+					    <a href="/kop/2012" class="kop-thumb thumbnail"><img class="kop-game" src="/images/2012-Game.jpg" /></a>
 					  </div>
 					  <div class="col-xs-12 col-sm-6 ">
-					  	<a href="/kop/2011" class="thumbnail"><img class="kop-game" src="/images/2011-Game.jpg" /></a>
-					  	<a href="/kop/2010" class="thumbnail"><img class="kop-game" src="/images/2010-Game.jpg" /></a>
-						<a href="/kop/2009" class="thumbnail"><img class="kop-game" src="/images/2009-Game.jpg" /></a>
+					  	<a href="/kop/2011" class="kop-thumb thumbnail"><img class="kop-game" src="/images/2011-Game.jpg" /></a>
+					  	<a href="/kop/2010" class="kop-thumb thumbnail"><img class="kop-game" src="/images/2010-Game.jpg" /></a>
+						<a href="/kop/2009" class="kop-thumb thumbnail"><img class="kop-game" src="/images/2009-Game.jpg" /></a>
 					  </div>
 					</div>
 					<?php
