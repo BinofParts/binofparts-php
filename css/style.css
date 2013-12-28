@@ -1,5 +1,5 @@
 body { 
-	padding-top: 70px; 
+	padding-top: 55px; 
 }
 .navbar-brand img{
 	height: 40px;
@@ -16,6 +16,12 @@ body {
 .bop-navbar .navbar-nav > li > a:hover {
 	color: #1fc200;
 }
+.logo-jumbo{
+	padding-bottom: 30px;
+}
+.kop-gamelist{
+	padding-top: 20px;
+}
 .kop-game{
 	max-height: 150px;
 	vertical-align: middle;
@@ -24,7 +30,7 @@ body {
 	height: 160px;
 }
 .media-list{
-
+	padding-top: 20px;
 }
 .media{
 	min-width: 450px;
