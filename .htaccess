@@ -9,6 +9,8 @@ ErrorDocument 404 https://binofparts.localhost
 
 
 RewriteRule ^kop/([0-9]+)?$ index.php?y=$1
+RewriteRule ^parts?$ parts.php$1
+RewriteRule ^part?$ parts.php$1
 RewriteRule ^myteam?$ team.php$1
 RewriteRule ^teams?$ teamlist.php$1
 RewriteRule ^events?$ eventlist.php$1
