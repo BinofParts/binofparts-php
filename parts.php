@@ -13,6 +13,7 @@ include('database.php');
 				<?php 
 					$database->displayParts();
 				?>
+				<a href="#" class="back-to-top visible-xs"><span class="glyphicon glyphicon-arrow-up"></span></a>
 			</div>
 			<?php include_once("footer.php"); ?>
 			<script type="text/javascript">
