@@ -13,26 +13,27 @@ include('database.php');
 				if ($_GET['y']<=2013&&$_GET['y']>=1992) {
 					?><div class="container"><?php
 					$database->displayKop($_GET['y']);
-					?></div><?php
+					?></div>
+					<a href="#" class="back-to-top visible-xs"><span class="glyphicon glyphicon-arrow-up"></span></a>
+					<?php
 				}
 				else{
 					?>
 					<div class="jumbotron">
 						<div class="container">
-							<div class="logo-jumbo row">
-							  	<div class="col-sm-6 col-xs-offset-2 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
-									<img src="/images/bop-logo-beta-full.png" width="350" />
-								</div>
-							</div>
 							<div class="row">
-								<div class="col-xs-6 col-sm-4">
-									<img src="/images/FRCicon.gif" height="200" />
+								<div class="col-sm-4 hidden-xs">
+									<a target="_blank" href="http://www.usfirst.org/roboticsprograms/frc"><img class="FRCicon" src="/images/FRCicon.gif" /></a>
 								</div>
-								<div class="col-xs-6 col-sm-4">
-									<img src="/images/FRCicon.gif" height="200" />
+								<div class="col-sm-4">
+									<h2>Kickoff 2014</h2>
+									<a role="button" class="btn btn-default btn-block btn-lg disabled" href="">View 2014 Kit of Parts</a>
+									<p>Come back on January 4th, 2014 to view this years Kit of Parts.</p>
 								</div>
-								<div class="col-xs-6 col-sm-4">
-									<img class="hidden-xs" src="/images/FRCicon.gif" height="200" />
+								<div class="col-sm-4 tba">
+									<i>Team & Event Data Provided By</i>
+									<div class="tba-logo"><a target="_blank" href="http://thebluealliance.com"><img src="/images/tba_lamp.png" /> The Blue Alliance</a></div>
+
 								</div>
 							</div>
 						</div>
