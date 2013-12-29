@@ -384,7 +384,7 @@ Your new password is: ".$newpassword."
 		echo '<ul class="media-list col-md-6">';	
 		foreach ($firsthalf as $row){
 			echo '
-				<li class="media" id="'.$row['name'].'">
+				<li class="media" id="'.$row['id'].'">
 					<a class="left pull-left"> <img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg"/> </a>
 					<div class="media-body">
 						<h4 class="media-heading">'.$row['name'].'</h4>
@@ -396,7 +396,7 @@ Your new password is: ".$newpassword."
 		echo '<ul class="media-list col-md-6">';
 		foreach ($secondhalf as $row){
 			echo '
-				<li class="media" id="'.$row['name'].'">
+				<li class="media" id="'.$row['id'].'">
 					<a class="left pull-left"> <img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg"/> </a>
 					<div class="media-body">
 						<h4 class="media-heading">'.$row['name'].'</h4>
@@ -407,7 +407,7 @@ Your new password is: ".$newpassword."
 		echo "</ul>";
 	}
 	function displayParts(){
-		$query = "SELECT * FROM $parts;";
+		$query = "SELECT * FROM parts;";
 		$result = mysqli_query($this->link, $query);
 		
 		if (!$result || mysqli_num_rows($result) < 1 || mysqli_connect_errno()){
@@ -428,8 +428,8 @@ Your new password is: ".$newpassword."
 		echo '<ul class="media-list col-md-6">';	
 		foreach ($firsthalf as $row){
 			echo '
-				<li class="media" id="'.$row['name'].'">
-					<a class="left pull-left"> <img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg"/> </a>
+				<li class="media" id="'.$row['id'].'">
+					<a class="left pull-left"> <img class="media-object" src="/images/parts/kop'.$row['id'].'.jpg"/> </a>
 					<div class="media-body">
 						<h4 class="media-heading">'.$row['name'].'</h4>
 					</div>
@@ -440,8 +440,8 @@ Your new password is: ".$newpassword."
 		echo '<ul class="media-list col-md-6">';
 		foreach ($secondhalf as $row){
 			echo '
-				<li class="media" id="'.$row['name'].'">
-					<a class="left pull-left"> <img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg"/> </a>
+				<li class="media" id="'.$row['id'].'">
+					<a class="left pull-left"> <img class="media-object" src="/images/parts/kop'.$row['id'].'.jpg"/> </a>
 					<div class="media-body">
 						<h4 class="media-heading">'.$row['name'].'</h4>
 					</div>
