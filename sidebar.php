@@ -16,11 +16,11 @@
 		  <li><a href="/teamlist.php">Teams</a></li>
 		  <li><a href="/eventlist.php">Events</a></li>
     </ul>
-    <form class="navbar-form navbar-left" role="search">
+    <!-- <form class="navbar-form navbar-left" role="search">
       	<div class="form-group">
           <input class="typeahead form-control" type="text" data-provide="typeahead" autocomplete="off" placeholder="Search for Parts">
       	</div>
-    </form>
+    </form> -->
     <ul class="nav navbar-nav navbar-right">
       	<li class="dropdown">
         	<a href="" class="dropdown-toggle" data-toggle="dropdown"><?php echo $session->username ?> <b class="caret"></b></a>
@@ -40,11 +40,11 @@
 		<li><a href="/teams">Teams</a></li>
 		<li><a href="/events">Events</a></li>
     </ul>
-    <form class="navbar-form navbar-right" role="search">
+    <!-- <form class="navbar-form navbar-right" role="search">
       	<div class="form-group">
-        	<input class="typeahead form-control" type="text" data-provide="typeahead" autocomplete="off" placeholder="Search for Parts">
+        	<input class="typeahead form-control" type="text" name="search" autocomplete="off" placeholder="Search for Parts">
       	</div>
-    </form>
+    </form> -->
     <!-- <ul class="nav navbar-nav navbar-right">
       	<li><a href="/login.php">Login</a></li>
 		  <li><a href="/register.php">Register</a></li>

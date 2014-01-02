@@ -7,7 +7,7 @@ if(isset($_GET['q'])){
 	$mysqli_query = $database->search($query);
 		
 	$json = json_encode($mysqli_query);
-  	print_r($json);
+  	echo($json);
 }
 
 ?>
