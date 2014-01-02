@@ -63,7 +63,7 @@ class Database
          */
 
 		while($row = mysqli_fetch_assoc($mysqli_query)){
-			$array[] = $row['name'];
+			$array[] = array('id' => $row['id'], 'name' => $row['name']);
 		}
 
 		return $array;
@@ -385,7 +385,7 @@ Your new password is: ".$newpassword."
 		foreach ($firsthalf as $row){
 			echo '
 				<li class="media" id="'.$row['id'].'">
-					<a class="left pull-left"> <img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg"/> </a>
+					<div class="left pull-left"><div class="imgcenter"></div><img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg"/></div>
 					<div class="media-body">
 						<h4 class="media-heading">'.$row['name'].'</h4>
 					</div>
@@ -397,7 +397,7 @@ Your new password is: ".$newpassword."
 		foreach ($secondhalf as $row){
 			echo '
 				<li class="media" id="'.$row['id'].'">
-					<a class="left pull-left"> <img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg"/> </a>
+					<div class="left pull-left"><div class="imgcenter"></div><img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg"/> </div>
 					<div class="media-body">
 						<h4 class="media-heading">'.$row['name'].'</h4>
 					</div>
@@ -429,7 +429,7 @@ Your new password is: ".$newpassword."
 		foreach ($firsthalf as $row){
 			echo '
 				<li class="media" id="'.$row['id'].'">
-					<a class="left pull-left"> <img class="media-object" src="/images/parts/kop'.$row['id'].'.jpg"/> </a>
+					<div class="left pull-left"><div class="imgcenter"></div><img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg"/></div>
 					<div class="media-body">
 						<h4 class="media-heading">'.$row['name'].'</h4>
 					</div>
@@ -441,7 +441,7 @@ Your new password is: ".$newpassword."
 		foreach ($secondhalf as $row){
 			echo '
 				<li class="media" id="'.$row['id'].'">
-					<a class="left pull-left"> <img class="media-object" src="/images/parts/kop'.$row['id'].'.jpg"/> </a>
+					<div class="left pull-left"><div class="imgcenter"></div><img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg"/> </div>
 					<div class="media-body">
 						<h4 class="media-heading">'.$row['name'].'</h4>
 					</div>
