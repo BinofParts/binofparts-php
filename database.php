@@ -1,8 +1,8 @@
 <?
 /**
  * This will take care of anything that requires a database connection.
- * This should only be included on session scripts.
- * This class is all gimme gimme gimme.. You cant always get what you want!
+ * Created By: Aaron Holland
+ *
  */
 
 //error_reporting(0);
@@ -40,6 +40,33 @@ class Database
              $error = "Error";
              return $result;
           }
+    }
+    function search($query){
+    	$mysqli_query = mysqli_query($this->link, "SELECT name FROM kop2012 WHERE upper(name) LIKE '%$query%' 
+           UNION
+           SELECT name FROM kop2011 WHERE upper(name) LIKE '%$query%'
+           UNION
+           SELECT name FROM kop2010 WHERE upper(name) LIKE '%$query%'
+           UNION
+           SELECT name FROM kop2009 WHERE upper(name) LIKE '%$query%'");
+		
+
+		/*This is for searching multiple things
+		$query = "(SELECT content, title, 'msg' as type FROM messages WHERE content LIKE '%" . 
+           $keyword . "%' OR title LIKE '%" . $keyword ."%') 
+           UNION
+           (SELECT content, title, 'topic' as type FROM topics WHERE content LIKE '%" . 
+           $keyword . "%' OR title LIKE '%" . $keyword ."%') 
+           UNION
+           (SELECT content, title, 'comment' as type FROM comments WHERE content LIKE '%" . 
+           $keyword . "%' OR title LIKE '%" . $keyword ."%')";
+         */
+
+		while($row = mysqli_fetch_assoc($mysqli_query)){
+			$array[] = array('id' => $row['id'], 'name' => $row['name']);
+		}
+
+		return $array;
     }
     #--------->Login/Register/Forgot Password<---------#
     function login($email, $pass){		
@@ -281,8 +308,8 @@ Your new password is: ".$newpassword."
             while($row = mysqli_fetch_assoc($result)){
 				if($row['name'] != null && $row['team_number'] > 0){
 					echo '<tr>'.
-					'<td><a>'.$row['team_number'].'</a>'.'</td> '.
-	            	'<td><a href="/team/'.$row['team_number'].'"><b>'.$row['nickname'].'</b></a>'.'</td> '.
+					'<td><a href="http://thebluealliance.com/team/'.$row['team_number'].'" target="_blank">'.$row['team_number'].'</a>'.'</td> '.
+	            	'<td><a href="http://thebluealliance.com/team/'.$row['team_number'].'" target="_blank"><b>'.$row['nickname'].'</b></a>'.'</td> '.
 					'<td> '.$row['location'].'</td>'.
 					'</tr>';
 				}
@@ -301,7 +328,7 @@ Your new password is: ".$newpassword."
         if ($result) {
             while($row = mysqli_fetch_assoc($result)){
 				echo '<tr>';
-				echo '<td><a href="/event/'.$row['key'].'"><b>'.$row['name'].'</b></a></td>';
+				echo '<td><a href="http://thebluealliance.com/event/'.$row['key'].'" target="_blank"><b>'.$row['name'].'</b></a></td>';
 				$start_date = date('M jS', strtotime($row['start_date']));
 				$end_date = date('M jS, Y', strtotime($row['end_date']));
 				echo '<td>'.$start_date.' to '.$end_date.'</td>';
@@ -343,17 +370,82 @@ Your new password is: ".$newpassword."
 		    echo('<div style="margin-top:25px; margin-left:50px;width:505px;">Sorry we dont have this years kit of parts in our database. Do you have a copy of this years kit of parts? Send it to us in an email, and well be sure to update our database. :)</div>');
 			return;
 		}
-		echo '<ul class="media-list">';
+		
 		while($row = mysqli_fetch_assoc($result))
 		{	
-			// $alt = ( ($row['id'] % 2) ? 'odd' : 'even' );	
+			$input[] = $row;
+			$len = count($input);
+			$len = $len / 2;
+			$len = round($len,0);
+
+			$firsthalf = array_slice($input, 0, $len );
+			$secondhalf = array_slice($input, $len);
+		}
+		echo '<ul class="media-list col-md-6">';	
+		foreach ($firsthalf as $row){
 			echo '
-				<li class="media">
-					<a class="pull-left"> <img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg" width="70"/> </a>
+				<li class="media" id="'.$row['id'].'">
+					<div class="left pull-left"><div class="imgcenter"></div><img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg"/></div>
 					<div class="media-body">
 						<h4 class="media-heading">'.$row['name'].'</h4>
-						<a>'.$row['qty'].'</a>
 					</div>
+					<div class="right pull-right"><a>QTY</a></br></br><a>'.$row['qty'].'</a></div>
+				</li>';
+		}
+		echo "</ul>";
+		echo '<ul class="media-list col-md-6">';
+		foreach ($secondhalf as $row){
+			echo '
+				<li class="media" id="'.$row['id'].'">
+					<div class="left pull-left"><div class="imgcenter"></div><img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg"/> </div>
+					<div class="media-body">
+						<h4 class="media-heading">'.$row['name'].'</h4>
+					</div>
+					<div class="right pull-right"><a>QTY</a></br></br><a>'.$row['qty'].'</a></div>
+				</li>';
+		}
+		echo "</ul>";
+	}
+	function displayParts(){
+		$query = "SELECT * FROM parts;";
+		$result = mysqli_query($this->link, $query);
+		
+		if (!$result || mysqli_num_rows($result) < 1 || mysqli_connect_errno()){
+		    echo('<div style="margin-top:25px; margin-left:50px;width:505px;">Please Refresh the page. We ran into an error loading the parts.</div>');
+			return;
+		}
+		
+		while($row = mysqli_fetch_assoc($result))
+		{	
+			$input[] = $row;
+			$len = count($input);
+			$len = $len / 2;
+			$len = round($len,0);
+
+			$firsthalf = array_slice($input, 0, $len );
+			$secondhalf = array_slice($input, $len);
+		}
+		echo '<ul class="media-list col-md-6">';	
+		foreach ($firsthalf as $row){
+			echo '
+				<li class="media" id="'.$row['id'].'">
+					<div class="left pull-left"><div class="imgcenter"></div><img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg"/></div>
+					<div class="media-body">
+						<h4 class="media-heading">'.$row['name'].'</h4>
+					</div>
+					<div class="right pull-right"><a>QTY</a></br></br><a>'.$row['qty'].'</a></div>
+				</li>';
+		}
+		echo "</ul>";
+		echo '<ul class="media-list col-md-6">';
+		foreach ($secondhalf as $row){
+			echo '
+				<li class="media" id="'.$row['id'].'">
+					<div class="left pull-left"><div class="imgcenter"></div><img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg"/> </div>
+					<div class="media-body">
+						<h4 class="media-heading">'.$row['name'].'</h4>
+					</div>
+					<div class="right pull-right"><a>QTY</a></br></br><a>'.$row['qty'].'</a></div>
 				</li>';
 		}
 		echo "</ul>";

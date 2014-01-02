@@ -5,9 +5,14 @@ RewriteBase /
 RewriteCond %{THE_REQUEST} ^.*/index\.php 
 RewriteRule ^(.*)index.php$ /$1 [R=301,L] 
 
+ErrorDocument 404 https://binofparts.localhost
 
-RewriteRule ^kop?$ kop.php$1
-RewriteRule ^kop/([0-9]+)?$ kop.php?y=$1
+
+RewriteRule ^kop/([0-9]+)?$ index.php?y=$1
+RewriteRule ^parts?$ parts.php$1
+RewriteRule ^part?$ parts.php$1
 RewriteRule ^myteam?$ team.php$1
+RewriteRule ^teams?$ teamlist.php$1
+RewriteRule ^events?$ eventlist.php$1
 RewriteRule ^team/([0-9]+)?$ team.php?n=$1
 RewriteRule ^event/([A-Za-z0-9_]+)?$ event.php?n=$1

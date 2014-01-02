@@ -1,5 +1,5 @@
 <?php 
-include('session.php');
+include('database.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,6 +12,7 @@ include('session.php');
 			<div class="container">
 				<?php $database->displayTeamList(); ?>
 			</div><!-- End Display -->
+			<a href="#" class="back-to-top visible-xs"><span class="glyphicon glyphicon-arrow-up"></span></a>
 			<?php include_once("footer.php"); ?>
 	</div>
 </body>
