@@ -1,5 +1,8 @@
 <?php 
 include('session.php');
+if(!$session->logged_in){
+	header('Location: login.php');
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,9 +12,11 @@ include('session.php');
 <body>
 	<div id="content">
 			<?php include_once("sidebar.php"); ?>
-			<div class="container">
-				<?php $database->displayEvents(); ?>
-			</div><!-- End Display -->
+			<div id="display">
+				<?php echo 'This is the homepage.';
+					//TODO: Add Homepage Here
+				?>
+			</div>
 			<?php include_once("footer.php"); ?>
 	</div>
 </body>

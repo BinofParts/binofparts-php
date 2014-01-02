@@ -1,146 +1,182 @@
-body { 
-	padding-top: 55px; 
+@media (max-width: 768px) {
+	#display{
+    	width: 98%;
+    }
 }
-.back-to-top {
-	z-index: 2000;
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    text-decoration: none;
-    color: #000000;
-    background-color: #ffffff;
-    border:1px solid #DDDDDD;
-    border-radius: 5px;
-    font-size: 14px;
-    padding: 5px 12px;
-    display: none;
+@media (min-width: 768px) {
+  	#display{
+    	width: 95%;
+    }
+    #teamlistview{
+		margin:auto;
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		column-count: 2;
+		-webkit-column-gap: 10px;
+		-moz-column-gap: 10px;
+		column-gap: 10px;
+	}
 }
 
-.back-to-top:hover {    
-    background-color: #eaeaea;
-    border:1px solid #DDDDDD;
+@media (min-width: 992px) {
+	#display{
+    	width: 90%;
+    }
+    #teamlistview{
+		margin:auto;
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		column-count: 2;
+		-webkit-column-gap: 10px;
+		-moz-column-gap: 10px;
+		column-gap: 10px;
+	}
+	.partslist{
+		margin:auto;
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		column-count: 2;
+	}
 }
-.navbar-brand img{
-	height: 40px;
-	margin-right:10px;
-   	margin-top:-15px;
-   	margin-bottom: -10px;
-   	
-}
-.FRCicon{
-	max-width: 100%;
-	max-height: 200px;
-}
-.tba{
-	padding-top: 15px;
-}
-.tba-logo{
-	padding-top: 20px;
-}
-.jumbotron{
-	background-color: #eaeaea;
-	text-align: center;
-}
-.jumbotron h2{
-	padding-bottom: 20px;
-}
-.jumbotron p{
-	padding-top: 10px;
-	font-size: 16px;
-}
-.bop-navbar {
-	padding:0px 30px;
-    min-height:55px;
-    display:table-cell;
-}
-.bop-navbar .navbar-nav > li > a:hover {
-	color: #1fc200;
-}
-.logo-jumbo{
-	padding-bottom: 30px;
-}
-.kop-gamelist{
-	padding-top: 20px;
-}
-.kop-game{
-	max-height: 150px;
-	vertical-align: middle;
-}
-.kop-thumb{
-	height: 160px;
-}
-.media-list{
-	padding-top: 20px;
-}
-.media{
-	min-width: 450px;
-	height: 85px;
-	border:1px solid #D2D2D2;
-	border-radius: 5px;
-	background-color: #f5f5f5;
-}
-.imgcenter {
-	display: inline-block;
-	vertical-align: middle;
-	height: 100%; 
-}
-.media .left {
-	overflow: hidden;
-	width: 85px;
-	height: 100%;
-	border-right:1px solid #DDDDDD;
-	text-align:center;
-  	font: 0/0 a;
-}
-.media .left img{
-	vertical-align: middle;
-	display: inline-block;
-	max-height: 100%;
-	max-width: 100%;
-}
-.media-body{
 
+@media (min-width: 1200px) {
+    #display{
+    	width: 90%;
+    }
+    #teamlistview{
+		margin:auto;
+		-webkit-column-count: 3;
+		-moz-column-count: 3;
+		column-count: 3;
+		-webkit-column-gap: 25px;
+		-moz-column-gap: 25px;
+		column-gap: 25px;
+	}
+	.partslist{
+		margin:auto;
+		-webkit-column-count: 3;
+		-moz-column-count: 3;
+		column-count: 3;
+	}
 }
-.media .right{
-	width:70px;
-	margin-top: -20px;
-	border-left:1px solid #DDDDDD;
-	text-align: center;
+
+body, html {
+    height: 100%;
 }
-.table-center td, .table-center th{
-	text-align: center;
+body{
+	color:#333333;
+	margin: 0;
+	padding:0;
+	background-color:#FAFAFA;
 }
-.team-table{
-	table-layout: fixed;
-}
-.team-table td{
-	text-overflow: ellipsis;
-    overflow: hidden;
+#content{
+	width:100%;
+	height:100%;
+	background-color:#FAFAFA;
 }
 #footer{
+	height:50px;
 	padding-top: 15px;
-	min-height: 100px;
+	background-color:#FAFAFA;
 }
-.footer{
-	padding: 30px 0;
+a{
+	color:#333333;
+	text-decoration:none;
 }
-#loginbox{
+a:link {
+	color:#333333;
+	text-decoration:none;
+}
+a:visited {
+	color:#333333;
+	text-decoration:none;
+}
+a:hover {
+	color:#333333;
+	text-decoration:none;
+}
+a:active {
+	color:#333333;
+	text-decoration:none;
+}
+#background {
+    position: fixed; 
+    left: 0px; 
+    top: 0px; 
+    z-index: -1;
+}
+.login-logo{
+	padding-top:80px;
 	margin:auto;
 	width:300px;
 }
-#login-logo{
-	margin-bottom: 45px;
+.register-logo{
+	padding-top:80px;
+	margin:auto;
+	width:300px;
+}
+#error-box{
+	color: #b94a48;
+	background-color: #f2dede;
+	border:2px solid #eed3d7;
+	margin-bottom: 10px;
+	margin-top: -10px;
+	padding:5px;
+	text-align: center;
+	border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;
+}
+#loginbox{
+	opacity:0.9;
+	width:300px;
+	padding-top:45px;
+	margin:auto;
 }
 #loginform{
-	padding-top: 15px;
 	background-color:#eaeaea;
 	border:1px solid #C5C5C5;
 	box-shadow: 0px 0px 2px 1px #D2D2D2 ;
 	-moz-box-shadow: 0px 0px 2px 1px #D2D2D2 ;
 	-webkit-box-shadow: 0px 0px 2px 1px #D2D2D2 ;
 	/*border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;*/
+	padding:20px;
+}
+#loginform b{
+	width:50px;
+	font-size:20px;
+	margin-left:100px;
+}
+#loginform input{
+	width:170px;
+	height:20px;
+	margin-bottom:4px;
+}
+#loginform #checkbox{
+	width:12px;
+	height:20px;
+	margin-bottom:0px;
+	margin-left:80px;
+	cursor:pointer;
+}
+#loginform #checkboxlabel{
+	float:right;
+	width:115px;
+	height:20px;
+	margin-right:40px;
+	margin-bottom:4px;
+	font-size:14px;
+	text-align:left;
+	cursor:pointer;
+}
+#loginform label{
+	width:70px;
+	float:left;
+	padding-right:5px;
+	margin-top:4px;
+	text-align:right;
 }
 #loginbtn{
+	float:left;
+	margin-left:-20px;
 	width:298px;
 	height:35px;
 	cursor:pointer;
@@ -156,7 +192,89 @@ body {
 #loginbtn:hover {
 	background-color:#FAFAFA;
 }
+#loginbtn:active {
+	position:relative;
+	top:1px;
+}
+#registerbox{
+	opacity:0.9;
+	width:350px;
+	padding-top:25px;
+	margin:auto;
+}
+#registerform{
+	background-color:#eaeaea;
+	border:1px solid #C5C5C5;
+	box-shadow: 0px 0px 2px 1px #D2D2D2 ;
+	-moz-box-shadow: 0px 0px 2px 1px #D2D2D2 ;
+	-webkit-box-shadow: 0px 0px 2px 1px #D2D2D2 ;
+	/*border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;*/
+	padding:20px;
+}
+#registerform input{
+	width:190px;
+	height:20px;
+	margin-bottom:4px;
+}
+#registerform select{
+	width:100px;
+	font-size:20px;
+	margin-bottom:4px;
+}
+#registerform label{
+	width:100px;
+	float:left;
+	padding-right:5px;
+	margin-top:4px;
+	text-align:right;
+}
+#registerbtn{
+	float:left;
+	margin-left:-20px;
+	margin-top:15px;
+	width:348px;
+	height:40px;
+	cursor:pointer;
+	text-indent:0;
+	border:none;
+	border-top:1px solid #C5C5C5;
+	display:inline-block;
+	color:#5C5C5C;
+	font-size:12px;
+	background-color:#eaeaea;
+	text-shadow:1px 1px 0px #ffffff;
+}
+#registerbtn:hover {
+	background-color:#FAFAFA;
+}
+#registerbtn:active {
+	position:relative;
+	top:1px;
+}
+#reg-link:hover{
+	text-decoration:underline;
+}
+#register-top{
+	width:348px;
+	margin-left:-20px;
+	margin-top:10px;
+	margin-bottom:15px;
+	border-bottom:1px solid #C5C5C5;
+}
 #bottombox{
+	margin:auto;
+	margin-top:15px;
+	width:216px;
+	height:25px;
+	padding-top:5px;
+	/*background-color:#DDDDDD;
+	border:1px solid #C5C5C5;
+	box-shadow: 0px 0px 2px 1px #D2D2D2 ;
+	-moz-box-shadow: 0px 0px 2px 1px #D2D2D2 ;
+	-webkit-box-shadow: 0px 0px 2px 1px #D2D2D2 ;
+	border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;*/
+}
+#bottomboxlogin{
 	margin:auto;
 	margin-top:15px;
 	width:216px;
@@ -169,6 +287,288 @@ body {
 	-webkit-box-shadow: 0px 0px 2px 1px #D2D2D2 ;
 	border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;*/
 }
+#bottomboxlogin a{
+	padding-left:10px;
+}
 #bottombox a{
 	padding-left:10px;
+}
+.sidebar{
+	position:fixed;
+	height:45px;
+	width:100%;
+	margin:0;
+	padding:0;
+	min-width:891px;
+	z-index:99;
+	border-bottom: 1px solid #C5C5C5;
+	/*box-shadow: 2px 0px 4px -1px #D2D2D2 ;
+	-moz-box-shadow: 2px 0px 4px -1px #D2D2D2 ;
+	-webkit-box-shadow: 2px 0px 4px -1px #D2D2D2 ;*/
+	background-color:#eaeaea;
+}
+.sidebar-wrapper{
+	margin: auto;
+}
+.sidebar-logo{
+	position:absolute;
+	padding-left:15px;
+	cursor:pointer;
+	margin-top: -12px; 
+}
+.sidebar-logo img{
+	width: 175px;
+	/*height: 40px;*/
+}
+.sidebar ul{
+	margin-left:210px;
+	list-style-type:none;
+	padding:0;
+}
+.sidebar li{
+	float: left;
+	margin-top: -15px;
+	/*border-left:1px solid #C5C5C5;*/
+}
+.sidebar a:link,a:visited{
+	display:block;
+	color:#5C5C5C;
+	text-align:middle;
+	padding:14px;
+	font-size: 15px;
+    font-weight: bold;
+    color: #333333;
+}
+.sidebar-wrapper > ul > li > a:hover{
+	color: #1fc200;
+	/*background-color:#FAFAFA;*/
+	box-shadow: inset 0 -4px 0 -1px #1fc200;
+	-webkit-box-shadow: inset 0 -4px 0 -1px #1fc200;
+	-moz-box-shadow: inset 0 -4px 0 -1px #1fc200;
+}
+#sidebar-bottom{
+	position:absolute;
+	margin:0;
+	padding:0;
+	right:10%;
+	z-index: 100;
+}
+
+#sidebar-bottom > li{
+	position: relative;
+}
+#sidebar-bottom > li > a > .caret{
+	border-top: 4px solid #aaa;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+	content: "";
+	display: inline-block;
+	height: 0;
+	width: 0;
+	vertical-align: middle;
+	
+	-webkit-transition: color 0.1s linear;
+	-moz-transition: color 0.1s linear;
+	-o-transition: color 0.1s linear;
+	transition: color 0.1s linear; 
+}
+#sidebar-bottom > li > a:hover{
+	color: #1fc200;
+}
+#sidebar-bottom > li > ul{
+	display: none;
+	height: auto;
+	float: right;									
+	margin: 0;
+	padding: 0;
+	border-right: 1px solid #C5C5C5;
+	border-left: 1px solid #C5C5C5;
+	border-bottom: 1px solid #C5C5C5;
+	background-color:#eaeaea;
+}
+#sidebar-bottom > li > ul > li{
+	z-index: 110;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+#sidebar-bottom > li > ul > li > a{
+	text-align: center;
+	padding: 8px 10px;
+	margin: 0;
+}
+#sidebar-bottom > li > ul > li > a:hover{
+	color: #1fc200;
+	/*background-color:#FAFAFA;*/
+	box-shadow: inset -4px 0 0 -1px #1fc200;
+	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
+	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;
+}
+#sidebar-bottom > li:hover > ul {
+	position: absolute; 
+	top: 45px; 
+	right: 0;
+	display: block; 
+	width: 130px;
+}
+.clear{
+	clear: both;
+}
+
+#index #index{
+	/*background-color:#FAFAFA;*/
+	box-shadow: inset 0 -4px 0 -1px #1fc200;
+	-webkit-box-shadow: inset 0 -4px 0 -1px #1fc200;
+	-moz-box-shadow: inset 0 -4px 0 -1px #1fc200;
+}
+#index #index a:hover{
+	box-shadow: inset 0 -4px 0 -1px #1fc200;
+	-webkit-box-shadow: inset 0 -4px 0 -1px #1fc200;
+	-moz-box-shadow: inset 0 -4px 0 -1px #1fc200;
+}
+#inventory #inventory{
+	/*background-color:#FAFAFA;*/
+	box-shadow: inset 0 -4px 0 -1px #1fc200;
+	-webkit-box-shadow: inset 0 -4px 0 -1px #1fc200;
+	-moz-box-shadow: inset 0 -4px 0 -1px #1fc200;
+}
+#inventory #inventory a:hover{
+	box-shadow: inset 0 -4px 0 -1px #1fc200;
+	-webkit-box-shadow: inset 0 -4px 0 -1px #1fc200;
+	-moz-box-shadow: inset 0 -4px 0 -1px #1fc200;
+}
+/*
+#team #team{
+	background-color:#FAFAFA;
+	box-shadow: inset -4px 0 0 -1px #1fc200;
+	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
+	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;
+}
+#team #team a:hover{
+	box-shadow: inset -4px 0 0 -1px #1fc200;
+	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
+	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;
+}*/
+#kop #kop{
+	/*background-color:#FAFAFA;*/
+	box-shadow: inset 0 -4px 0 -1px #1fc200;
+	-webkit-box-shadow: inset 0 -4px 0 -1px #1fc200;
+	-moz-box-shadow: inset 0 -4px 0 -1px #1fc200;
+}
+#kop #kop a:hover{
+	box-shadow: inset 0 -4px 0 -1px #1fc200;
+	-webkit-box-shadow: inset 0 -4px 0 -1px #1fc200;
+	-moz-box-shadow: inset 0 -4px 0 -1px #1fc200;
+}
+#teamlist #teamlist{
+	/*background-color:#FAFAFA;*/
+	box-shadow: inset 0 -4px 0 -1px #1fc200;
+	-webkit-box-shadow: inset 0 -4px 0 -1px #1fc200;
+	-moz-box-shadow: inset 0 -4px 0 -1px #1fc200;
+}
+#teamlist #teamlist a:hover{
+	box-shadow: inset 0 -4px 0 -1px #1fc200;
+	-webkit-box-shadow: inset 0 -4px 0 -1px #1fc200;
+	-moz-box-shadow: inset 0 -4px 0 -1px #1fc200;
+}
+#eventlist #eventlist{
+	/*background-color:#FAFAFA;*/
+	box-shadow: inset 0 -4px 0 -1px #1fc200;
+	-webkit-box-shadow: inset 0 -4px 0 -1px #1fc200;
+	-moz-box-shadow: inset 0 -4px 0 -1px #1fc200;
+}
+#eventlist #eventlist a:hover{
+	box-shadow: inset 0 -4px 0 -1px #1fc200;
+	-webkit-box-shadow: inset 0 -4px 0 -1px #1fc200;
+	-moz-box-shadow: inset 0 -4px 0 -1px #1fc200;
+}
+/*
+#settings #settings{
+	background-color:#FAFAFA;
+	box-shadow: inset -4px 0 0 -1px #1fc200;
+	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
+	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;
+}
+#settings #settings a:hover{
+	box-shadow: inset -4px 0 0 -1px #1fc200;
+	-webkit-box-shadow: inset -4px 0 0 -1px #1fc200;
+	-moz-box-shadow: inset -4px 0 0 -1px #1fc200;
+}*/
+#listevents a:link, a:visited{
+	text-decoration:none;
+	color:#333333;
+}
+#display{
+	margin: auto;
+	padding-top: 55px;
+	background-color:#FAFAFA;
+	z-index: 5;
+}
+.partslist{
+	list-style-type: none;
+}
+.partslist > li{
+	width:320px;
+	height: 70px;
+	margin-bottom: 10px;
+	background-color:#eaeaea;
+	border:1px solid #C5C5C5;
+	border-radius: 3px;
+}
+.partslist > li > img{
+	height: 70px;
+	max-width: 90px;
+}
+.partslist > li > a{
+	background-color: #EEEEEE;
+}
+
+#banner_container {
+	margin:auto;
+	width:750px;
+	height:200px;
+	padding:2px;
+	background-color:#FFFFFF;
+	border:2px solid #FFFFFF;
+	border-radius:1px;
+	box-shadow: 0px 0px 2px rgba(0,0,0,0.9);
+}
+#banner_img {
+	height:200px;
+	background-color:#DDDDDD;
+	box-shadow: 0px 0px 2px rgba(0,0,0,0.9);
+}
+#teamlistview{
+	margin:auto;
+}
+#teamlistview > div{
+	width:350px;
+	overflow: hidden; 
+}
+#teamlistview > div > .location{
+	margin-right: 20px;
+	float: right;
+}
+#team_top {
+	padding-bottom:10px;
+}
+#team_bottom {
+	margin:auto;
+	width:800px;
+	padding-top:25px;
+}
+#team_roster {
+	float:left;
+	width:400px;
+}
+#team_roster td{
+	border-radius:2px;
+	padding:2px 5px 2px 5px;
+}
+#team_roster .user{
+	color:#FAFAFA;
+	padding-left:20px;
+	padding-right:5px;
+	border-left: 1px solid #C5C5C5;
+	background-color:#1fc200;
 }
