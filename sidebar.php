@@ -45,10 +45,10 @@
         	<input class="typeahead form-control" type="text" name="search" autocomplete="off" placeholder="Search for Parts">
       	</div>
     </form> -->
-    <!-- <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right">
       	<li><a href="/login.php">Login</a></li>
 		  <li><a href="/register.php">Register</a></li>
-    </ul> -->
+    </ul>
 </div>
 <?php }?>
   

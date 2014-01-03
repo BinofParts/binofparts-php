@@ -3,7 +3,7 @@
  * This will take care of checking if the user is logged in. 
  * Also will see if they are an admin.
  */
-include("../database.php");
+include("database.php");
 
 class Session
 {

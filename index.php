@@ -1,5 +1,5 @@
 <?php 
-include('database.php');
+include('session.php');
 include('mixpanel.php');
 ?>
 <!DOCTYPE html>

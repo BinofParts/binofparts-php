@@ -6,7 +6,7 @@ if($session->logged_in){
 ?>
 <!DOCTYPE html>
 <html>
-<?php include_once("../head.html"); ?>
+<?php include_once("head.html"); ?>
 <body>
 	<div id="content">
 		<div class="container">
