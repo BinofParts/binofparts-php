@@ -16,8 +16,8 @@ if($session->logged_in){
 					<form name="login" id="loginform" role="form" action="form_action.php" method="post">
 						<?php 
 							if(isset($_SESSION['error'])){
-								echo '<div id="error-box">'.
-								$_SESSION['error'].'</div>';
+								echo '<div class="col-md-12"><div class="alert alert-danger">'.
+								$_SESSION['error'].'</div></div>';
 							}
 							unset($_SESSION['error']);
 								?>
@@ -42,6 +42,7 @@ if($session->logged_in){
 						<button type="submit" id="loginbtn" value="Login"/>Login</button>
 					</form>
 				</div>
+				<!-- <div id="bottombox"><i>Don't have an account?</i><a id="reg-link" href="register.php"/>Register</a></div> -->
 			</div>
 		</div>
 	</div>
