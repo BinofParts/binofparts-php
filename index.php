@@ -1,6 +1,5 @@
 <?php 
 include('session.php');
-include('mixpanel.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,6 +13,7 @@ include('mixpanel.php');
 				if ($_GET['y']<=2013 && $_GET['y']>=1992) { ?>
 					<div class="container">
 					<?php $database->displayKop($_GET['y']);
+						$mixpanel->identify($session->useremail);
 						$mixpanel->track("displayKop", array("year" => $_GET['y']));
 					 ?>
 						<a href="#" class="back-to-top visible-xs"><span class="glyphicon glyphicon-arrow-up"></span></a>

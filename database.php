@@ -8,6 +8,7 @@
 //error_reporting(0);
 
 include("bcrypt.php");
+require 'mixpanel.php';
 
 session_start();
 
@@ -69,7 +70,8 @@ class Database
 		return $array;
     }
     #--------->Login/Register/Forgot Password<---------#
-    function login($email, $pass){		
+    function login($email, $pass){	
+    	global $mixpanel;	
 
 		if(empty($email) || empty($pass)){
 			$_SESSION['error'] = "All fields are required. ";
@@ -113,6 +115,7 @@ class Database
 
 				$_SESSION['username'] = $email;
 				setcookie("username", $email, mktime()+86400, "/");
+				$mixpanel->people->increment($email, "login count", 1);
 
 				return true;
 			}
@@ -179,7 +182,8 @@ Your new password is: ".$newpassword."
         }
 		//header('Location: forgotpassword.php');
 	}
-	function register($team, $namefirst, $namelast, $email, $pass, $type){		
+	function register($team, $namefirst, $namelast, $email, $pass, $type){	
+		global $mixpanel;
 
 		$_SESSION['team'] = $team;
 		$_SESSION['namefirst'] = $namefirst;
@@ -211,6 +215,15 @@ Your new password is: ".$newpassword."
 					return false;
 				}
 				else{
+					$mixpanel->people->set($email, array(
+					    '$first_name'       => $namefirst,
+					    '$last_name'        => $namelast,
+					    '$email'            => $email,
+					    'Role'            => $type,
+					    "Team"    => $team
+					));
+					$mixpanel->identify($email);
+					$mixpanel->track('register');
 					return true;
 				}
 			}
