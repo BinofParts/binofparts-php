@@ -1,7 +1,7 @@
 <?php 
-include('session.php');
+include('../session.php');
 if(!$session->logged_in || $session->admin != 'Y'){
-	header('Location: login.php');
+	header('Location: ../login.php');
 }
 ?>
 <!DOCTYPE html>
@@ -26,7 +26,7 @@ if(!$session->logged_in || $session->admin != 'Y'){
 			<a>Team database last updated:</a> <?php $database->checkTeamsLastUpdated();?>
 			</br><a>Event database last updated:</a> <?php $database->checkEventsLastUpdated();?>
 			</div>
-			<script src="https://code.jquery.com/jquery.js"></script>
+			<!-- <script src="https://code.jquery.com/jquery.js"></script>
 			<script src="../js/bootstrap.min.js"></script>
 			<script src="../js/bootstrap3-typeahead.min.js"></script>
 
@@ -46,7 +46,7 @@ if(!$session->logged_in || $session->admin != 'Y'){
 			    }
 			  });
 			});
-			</script>
+			</script> -->
 	</div>
 </body>
 </html>
