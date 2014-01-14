@@ -8,7 +8,9 @@ RewriteRule ^(.*)index.php$ /$1 [R=301,L]
 ErrorDocument 404 https://binofparts.localhost
 
 
-RewriteRule ^kop/([0-9]+)?$ index.php?y=$1
+RewriteRule ^kitofparts?$ kop.php$1
+RewriteRule ^kop?$ kop.php$1
+RewriteRule ^kop/([0-9]+)?$ kop.php?y=$1
 RewriteRule ^parts?$ parts.php$1
 RewriteRule ^part?$ parts.php$1
 RewriteRule ^myteam?$ team.php$1
