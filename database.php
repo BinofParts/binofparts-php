@@ -252,7 +252,7 @@ Your new password is: ".$newpassword."
 		}
 
 		/* Verify that user is in database */
-		$q = "SELECT email FROM login WHERE email = '$email'";
+		$q = "SELECT email FROM user WHERE email = '$email'";
 		$result = mysqli_query($this->link, $q);
 		if(!$result || (mysqli_num_rows($result) < 1)){
 		  	return 1; //Indicates username failure
@@ -269,13 +269,13 @@ Your new password is: ".$newpassword."
 	}
 	#--------->Display Information<---------#
 	function displayTeam($username){
-		$query = "SELECT team FROM login WHERE email = '$username';";
+		$query = "SELECT team FROM user WHERE email = '$username';";
 		$result = mysqli_query($this->link, $query);
 		$team = mysqli_fetch_assoc($result);
 		$teamnumber = $team['team'];
 		
 		//TODO: check if mentor and verified
-		$query2 = "SELECT * FROM login WHERE team = '$teamnumber';";
+		$query2 = "SELECT * FROM user WHERE team = '$teamnumber';";
 		$result2 = mysqli_query($this->link, $query2);
 		
 		echo '<table align="center">';
@@ -490,7 +490,7 @@ Your new password is: ".$newpassword."
 		return $result;
 	}
 	function getUserInfo($username){
-		$q = "SELECT * FROM login WHERE email = '$username';";
+		$q = "SELECT * FROM user WHERE email = '$username';";
 		$result = mysqli_query($this->link, $q);
 		
  		if(!$result || mysqli_num_rows($result) < 1){
@@ -549,7 +549,7 @@ Your new password is: ".$newpassword."
 		}
 	
 		//check if email is taken
-		$emailcheck = "SELECT email FROM login WHERE email = '$email';";
+		$emailcheck = "SELECT email FROM user WHERE email = '$email';";
 		$result2 = $this->qry($emailcheck);
 		if(mysqli_num_rows($result2) == 1) //email already registered
 		{
@@ -558,7 +558,7 @@ Your new password is: ".$newpassword."
 		}
 
 		//create user...
-		$query = "INSERT INTO login (team, namefirst, namelast, email, pass, type) VALUES ('$team', '$firstname', '$lastname', '$email', '$password', '$type');";
+		$query = "INSERT INTO user (team, namefirst, namelast, email, pass, type) VALUES ('$team', '$firstname', '$lastname', '$email', '$password', '$type');";
 		$this->qry($query);
 	}
 	#--------->Check Information<---------#
@@ -582,7 +582,7 @@ Your new password is: ".$newpassword."
 	function checkPassword($email, $password){
 		//Grab the password from db
 		$username = mysqli_real_escape_string($this->link, $email);
-		$query = "SELECT pass, verify FROM login WHERE email = '$email';";
+		$query = "SELECT pass, verify FROM user WHERE email = '$email';";
 		$result = $this->qry($query);
 
 		//That user isnt in the db...
