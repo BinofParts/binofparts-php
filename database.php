@@ -278,14 +278,8 @@ Your new password is: ".$newpassword."
 		$query2 = "SELECT * FROM user WHERE team = '$teamnumber';";
 		$result2 = mysqli_query($this->link, $query2);
 		
-		echo '<table align="center">';
-		echo '<tbody>';
-		echo '<tr>';
-		echo '<th></th>';
-		echo '<th>Name</th>';
-		echo '<th>Email</th>';
-		echo '<th>Role</th>';
-		echo '</tr>';
+		echo'<table class="table table-striped table-condensed table-center team-table"><tbody>';
+		echo '<tr><thead><th>Name</th><th>Email</th><th>Role</th></tr></thead>';
 		if (!$result2 || mysqli_num_rows($result2) < 1) {
 			echo ('<tr>');
 			echo("<td>None to display.</td>");
@@ -298,13 +292,11 @@ Your new password is: ".$newpassword."
 			unset($row['pass']);
 		
 			echo ('<tr>');
+			echo ('<td>');
 			if($username == $row['email']){
-				echo ('<td class="user">You</td>');
+				echo ('<span class="label label-success">You</span> ');
 			}
-			else{
-				echo ('<td></td>');
-			}
-			echo ('<td>'.$row['namefirst'].' '.$row['namelast'].'</td>');
+			echo ($row['namefirst'].' '.$row['namelast'].'</td>');
 			echo ('<td>'.$row['email'].'</td>');
 			echo ('<td>'.ucfirst($row['type']).'</td>');
 			echo ('</tr>');
