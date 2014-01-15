@@ -12,7 +12,7 @@ if(!$session->logged_in){
 <body>
 	<div id="content">
 			<?php include_once("sidebar.php"); ?>
-			This is the homepage.	
+			This is the settings page.	
 			<?php include_once("footer.php"); ?>
 	</div>
 </body>

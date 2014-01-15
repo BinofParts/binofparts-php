@@ -1,14 +1,14 @@
 <div id="footer">
 	<div class="container">
 		<hr>
-		<div class="footer col-sm-6 col-md-6 col-lg-6 col-xs-offset-3">
+		<div class="footer col-sm-8 col-md-6 col-lg-6 col-xs-offset-2 col-sm-offset-3">
 			<div class="col-xs-6 col-md-6">
 				<a href="http://blog.binofparts.com">Blog</a> &middot;
 				<a target="_blank" href="https://facebook.com/binofparts">Facebook</a> &middot;
 				<a target="_blank" href="https://twitter.com/binofparts">Twitter</a>
 				<p>&copy; <?php echo date('Y'); ?> Bin of Parts, Inc</p>
 			</div>
-			<div class="col-xs-6 col-md-6">
+			<div class="col-xs-3 col-sm-3">
 				<a href="https://mixpanel.com/f/partner"><img src="//cdn.mxpnl.com/site_media/images/partner/badge_blue.png" alt="Mobile Analytics" /></a>
 			</div>
 		</div>
@@ -17,7 +17,7 @@
 
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="/js/bootstrap.min.js"></script>
-<script src="/js/typeahead.min.js"></script>
+<!-- <script src="/js/typeahead.min.js"></script>
 <script src="http://twitter.github.com/hogan.js/builds/2.0.0/hogan-2.0.0.js"></script>
 
 <script type="text/javascript">
@@ -35,4 +35,4 @@ $(document).ready(function() {
     limit: 10 
   });
 });
-</script>
+</script> -->
