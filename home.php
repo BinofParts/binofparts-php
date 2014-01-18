@@ -12,7 +12,7 @@ if(!$session->logged_in){
 <body>
 	<div id="content">
 			<?php include_once("sidebar.php"); ?>
-			<div id="change"><?php $database->displayLiveFeed();?></div>	
+			<div id="change"><?php $database->displayLiveFeed('0');?></div>	
 			<?php include_once("footer.php"); ?>
 			<script type="text/javascript">
 			setInterval(function() {

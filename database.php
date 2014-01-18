@@ -345,24 +345,25 @@ Your new password is: ".$newpassword."
 		}
 		echo '</tbody></table>';
 	}
-	function displayLiveFeed(){		
-		$query = "SELECT * FROM trades ORDER BY id DESC limit 20";
+	function displayLiveFeed($lastid){		
+		$query = "SELECT * FROM trades WHERE id > '$lastid' ORDER BY id DESC";
 		$result = mysqli_query($this->link, $query);
 				
         if ($result) {
             while($row = mysqli_fetch_assoc($result)){
-				echo '<div class="list" id="'.$row['id'].'">';
-				echo $row['team1'];
-				$kopyear = "kop".$row['part1_year'];
+				
+            	$kopyear = "kop".$row['part1_year'];
 				$part1 = $row['part1'];
 				$partquery = "SELECT name FROM $kopyear WHERE id = '$part1';";
 				$partresult = mysqli_query($this->link, $partquery);
 				if($partresult){
-					$part = mysqli_fetch_assoc($partresult);
-					echo '<img src="/images/kop'.$row['part1_year'].'/'.$row['part1_year'].'kop'.$row['part1'].'.jpg" width="70px">';
-					echo $part['name'];
+					echo '<div class="list" id="'.$row['id'].'">';
+						echo $row['team1'];
+						$part = mysqli_fetch_assoc($partresult);
+						echo '<img src="/images/kop'.$row['part1_year'].'/'.$row['part1_year'].'kop'.$row['part1'].'.jpg" width="70px">';
+						echo $part['name'];
+					echo '</div>';
 				}
-				echo '</div>';
 			}
         }
 	}
