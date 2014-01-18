@@ -12,8 +12,23 @@ if(!$session->logged_in){
 <body>
 	<div id="content">
 			<?php include_once("sidebar.php"); ?>
-			This is the homepage.	
+			<div id="change"><?php $database->displayLiveFeed();?></div>	
 			<?php include_once("footer.php"); ?>
-	</div>
+			<script type="text/javascript">
+			setInterval(function() {
+				var latestid = $("#change div:first-child").attr("id");
+			   	$.ajax({
+				        url: 'ajax.php',
+				        data: 'last=' +latestid,
+						type: 'POST',
+				        cache: true,
+				        success: function(response) {
+							if(response){
+								$('#change').prepend(response);
+							}
+				        }
+				    });
+			},5000);
+			</script>
 </body>
 </html>
