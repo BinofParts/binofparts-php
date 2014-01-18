@@ -6,7 +6,7 @@ if(!$session->logged_in || $session->admin != 'Y'){
 
 for ($i = 1; $i < 10; $i++) {
 $url = "http://www.thebluealliance.com/api/v1/teams/show?teams=frc$i";
-$data = @json_decode(file_get_contents($url), true);
+$data = json_decode(file_get_contents($url), true);
 if ($data == null){
 	continue;
 }
