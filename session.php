@@ -53,6 +53,8 @@ class Session
 			 $this->username	=  $this->userinfo['namefirst'];
 			 $this->username	.= " ";
 			 $this->username	.=  $this->userinfo['namelast'];
+			 $this->username_first	=  $this->userinfo['namefirst'];
+			 $this->username_last	.=  $this->userinfo['namelast'];
 			 $this->admin = $this->userinfo['admin'];
 			 //$this->joindate  = $this->userinfo['joindate'];
 	         return true;

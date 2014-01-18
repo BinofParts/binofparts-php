@@ -1,6 +1,6 @@
 <?php 
 include('../session.php');
-if(!$session->logged_in || $session->admin != 'Y'){
+if(!$session->logged_in && $session->admin != 'Y' && $session->type == 'admin'){
 	header('Location: ../login.php');
 }
 ?>
@@ -13,9 +13,6 @@ if(!$session->logged_in || $session->admin != 'Y'){
 	<div id="content">
 			<?php include_once("../sidebar.php"); ?>
 			<div id="display">
-			  Welcome to the admin page!</br> 
-			<?php echo $session->name;?></br>
-			<?php echo $session->type;?> for <?php echo $session->team;?>
 			
 			</br></br></br>type team number to update it.
 			<form method="post" action="../tests/updateteam.php">
