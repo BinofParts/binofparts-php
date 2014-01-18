@@ -16,7 +16,8 @@ if($session->logged_in){
 					<form name="login" id="loginform" role="form" action="form_action.php" method="post">
 						<?php 
 							if(isset($_SESSION['error'])){
-								echo '<div class="col-md-12"><div class="alert alert-danger">'.
+								echo '<div class="col-md-12"><div class="alert alert-danger alert-dismissable">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'.
 								$_SESSION['error'].'</div></div>';
 							}
 							unset($_SESSION['error']);
@@ -45,6 +46,7 @@ if($session->logged_in){
 				<!-- <div id="bottombox"><i>Don't have an account?</i><a id="reg-link" href="register.php"/>Register</a></div> -->
 			</div>
 		</div>
+		<?php include_once("footer.php"); ?>
 	</div>
 </body>
 </html>

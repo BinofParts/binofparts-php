@@ -92,7 +92,7 @@ class Database
 					$_SESSION['error'] = "Your account was declined access. Please contact the lead mentor for your team if this is an error.";
 					return false;
 				}else if($passwordcheck == 4){
-					$_SESSION['error'] = "Your account has been disabled. If this is an error please contact us at info(at)binofparts.com";
+					$_SESSION['error'] = "Account has been disabled.";
 					return false;
 				}else if($passwordcheck == 5){
 					$_SESSION['error'] = "Your account isn't verified. Please contact a mentor for your team.";
