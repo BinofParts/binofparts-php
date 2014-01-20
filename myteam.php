@@ -11,7 +11,7 @@ if(!$session->logged_in){
 </head>
 <body>
 	<div id="content">
-		<?php include_once("sidebar.php"); ?>
+		<?php include_once("navbar.php"); ?>
 		<div class="container">
 			<div class="col-md-8 col-lg-8 col-md-offset-2">
 				<?php

@@ -8,7 +8,7 @@ include_once("session.php");
 </head>
 <body>
 	<div id="content">
-			<?php include_once("sidebar.php"); ?>
+			<?php include_once("navbar.php"); ?>
 			This is the inventory page.	
 			<?php include_once("footer.php"); ?>
 	</div>

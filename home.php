@@ -11,7 +11,7 @@ if(!$session->logged_in){
 </head>
 <body>
 	<div id="content">
-			<?php include_once("sidebar.php"); ?>
+			<?php include_once("navbar.php"); ?>
 			<div id="change"><?php $database->displayLiveFeed('0');?></div>	
 			<?php include_once("footer.php"); ?>
 			<script type="text/javascript">

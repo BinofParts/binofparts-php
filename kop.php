@@ -8,7 +8,7 @@ include_once("session.php");
 </head>
 <body>
 	<div id="content">
-			<?php include_once("sidebar.php"); ?>
+			<?php include_once("navbar.php"); ?>
 				<?php 
 				if ($_GET['y']<=2013 && $_GET['y']>=1992) { ?>
 					<div class="container">

@@ -11,7 +11,7 @@ if(!$session->logged_in && $session->admin != 'Y' && $session->type == 'admin'){
 </head>
 <body>
 	<div id="content">
-			<?php include_once("../sidebar.php"); ?>
+			<?php include_once("../navbar.php"); ?>
 			<div id="display">
 			
 			</br></br></br>type team number to update it.

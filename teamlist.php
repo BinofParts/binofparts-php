@@ -8,7 +8,7 @@ include('session.php');
 </head>
 <body>
 	<div id="content">
-			<?php include_once("sidebar.php"); ?>
+			<?php include_once("navbar.php"); ?>
 			<div class="container">
 				<?php $database->displayTeamList(); ?>
 			</div><!-- End Display -->

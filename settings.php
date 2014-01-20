@@ -11,7 +11,7 @@ if(!$session->logged_in){
 </head>
 <body>
 	<div id="content">
-			<?php include_once("sidebar.php"); ?>
+			<?php include_once("navbar.php"); ?>
 			This is the settings page.	<a href="/admin">Admin Panel</a>
 			<?php include_once("footer.php"); ?>
 	</div>
