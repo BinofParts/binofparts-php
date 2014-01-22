@@ -4,6 +4,6 @@ if ($session->logged_in){
 	include 'home.php';
 }
 else{
-	include 'kop.php';
+	include 'about.php';
 }
 ?>

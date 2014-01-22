@@ -1,4 +1,7 @@
 <?php
+if(!isset($_GET['invite'])){
+	header('Location: /');
+}
 include('session.php');
 ?>
 <!DOCTYPE html>

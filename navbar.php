@@ -1,4 +1,5 @@
 <nav class="bop-navbar navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="container">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
       <span class="sr-only">Toggle navigation</span>
@@ -37,6 +38,7 @@
 <?php }else{?>
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
+    <li><a href="/kop">Kit of Parts</a></li>
 		<li><a href="/teams">Teams</a></li>
 		<li><a href="/events">Events</a></li>
     </ul>
@@ -51,5 +53,5 @@
     </ul>
 </div>
 <?php }?>
-  
+</div>
 </nav>
