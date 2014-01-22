@@ -1,17 +1,22 @@
 <div id="footer">
-	<div class="container">
-		<hr>
-		<div class="footer col-sm-8 col-md-6 col-lg-6 col-xs-offset-2 col-sm-offset-3">
-			<div class="col-xs-6 col-md-6">
+	<div class="footer col-xs-4 col-sm-8 col-md-6 col-xs-offset-4 col-sm-offset-2 col-md-offset-3">
+			<div class="col-sm-6 hidden-xs section" id="links">
 				<a href="http://blog.binofparts.com">Blog</a> &middot;
 				<a target="_blank" href="https://facebook.com/binofparts">Facebook</a> &middot;
 				<a target="_blank" href="https://twitter.com/binofparts">Twitter</a>
 				<p>&copy; <?php echo date('Y'); ?> Bin of Parts, Inc</p>
 			</div>
-			<div class="col-xs-3 col-sm-3">
-				<a href="https://mixpanel.com/f/partner"><img src="//cdn.mxpnl.com/site_media/images/partner/badge_blue.png" alt="Mobile Analytics" /></a>
+			<div class="col-sm-6 visible-xs section" id="links-xs">
+				<a href="http://blog.binofparts.com">Blog</a> &middot;
+				<a target="_blank" href="https://facebook.com/binofparts">Facebook</a> &middot;
+				<a target="_blank" href="https://twitter.com/binofparts">Twitter</a>
 			</div>
-		</div>
+			<div class="col-sm-3 section" id="mixpanel">
+				<a href="https://mixpanel.com/f/partner"><img src="//cdn.mxpnl.com/site_media/images/partner/badge_light.png" alt="Mobile Analytics" /></a>
+			</div>
+			<div class="col-sm-3 section" id="digitalocean">
+				<a href="https://www.digitalocean.com"><img src="/images/digitalocean-badge-white.png" alt="Digital Ocean" /></a>
+			</div>
 	</div>
 </div>
 
