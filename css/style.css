@@ -33,10 +33,56 @@ body {
    	margin-bottom: -10px;
    	
 }
+.missionjumbo{
+	position: relative;
+	min-height: 320px;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	text-align: center;
+	color: white;
+}
+.missionjumbo:after{
+	content:"";
+	background: url("/images/first_2011_header.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	opacity: 1.0;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: 1;
+
+}
+.mission{
+	width: 100%;
+	position: absolute;
+	left:0;
+	color: white;
+	margin-top: 75px;
+	font-weight: 700;
+	font-size: 23px;
+	z-index: 30;
+}
+.bop-bio{
+	font-size: 16px;
+}
+.first-bio{
+	font-size: 16px;
+	margin-bottom: 30px;
+}
+.first-vision{
+	font-size: 20px;
+	font-weight: 500;
+}
 .bop-logo{
 	margin-left: 25%;
 	max-width: 50%;
 	max-height: 200px;
+}
+.first-logo{
+	margin-top:35px;
 }
 .FRCicon{
 	max-width: 100%;
@@ -58,6 +104,14 @@ body {
 .jumbotron p{
 	padding-top: 10px;
 	font-size: 16px;
+}
+.github-buttons{
+	margin-top: 55px;
+	margin-bottom: 75px;
+	text-align: center;
+}
+.github-buttons h3{
+	margin-bottom: 35px;
 }
 .bop-navbar {
 	padding:0px 30px;
