@@ -1,6 +1,8 @@
-body { 
-	padding-top: 55px; 
+body, html { 
 	background: #333333;
+}
+body{
+	padding-top: 55px;
 }
 #content{
 	padding-top: 55px;
