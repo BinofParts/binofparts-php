@@ -2,18 +2,20 @@ SETUP
 ===============
 
 Install Vagrant
-Add the box: vagrant box add vemp https://dl.dropbox.com/u/2382631/vemp.box.
-Go in to your site's root directory and create the VM: vagrant init vemp.
-Start things up: vagrant up.
-SSH In: vagrant ssh.
-Start up Nginx: sudo service nginx restart.
-You're good to go! You can access your site with 127.0.0.1:5232
++ Add the box: vagrant box add vemp https://dl.dropbox.com/u/2382631/vemp.box.
++ Go in to your site's root directory and create the VM: vagrant init vemp.
++ Start things up: vagrant up.
++ SSH In: vagrant ssh.
++ Start up Nginx: sudo service nginx restart.
++ You're good to go! You can access your site with 127.0.0.1:5232
 
-Next edit the following file.
+Next edit the following file on the vagrant server.
 
 `nano /etc/nginx/sites-available/vagrant`
 
-`server {
+and it should now look like below.
+
+```server {
 
         server_name _;
 
@@ -76,7 +78,7 @@ Next edit the following file.
         location /parts {
           rewrite ^/parts?$ /parts.php$1;
         }
-}`
+}```
 
 
 
