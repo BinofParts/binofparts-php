@@ -48,7 +48,7 @@
       	</div>
     </form> -->
     <ul class="nav navbar-nav navbar-right">
-    	<li><a href="/login.php">Login</a></li>
+    	<li><a href="/login">Login</a></li>
 		  <!-- <li><a href="/register.php">Register</a></li> -->
     </ul>
 </div>
