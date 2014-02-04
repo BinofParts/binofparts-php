@@ -3,12 +3,8 @@ include('session.php');
 if($session->logged_in){
 	header('Location: index.php');
 }
-?>
-<!DOCTYPE html>
-<html>
-<?php include_once("head.html"); ?>
-<body>
-	<div id="content">
+
+include_once("head.php"); ?>
 		<div class="container">
 			<div class="row">
 				<div id="loginbox">

@@ -1,17 +1,7 @@
-<?php 
-include('session.php');
-if(!$session->logged_in){
-	header('Location: /');
-}
-?>
-<!DOCTYPE html>
-<html>
-<head>
-	<?php include_once("head.html"); ?>
-</head>
-<body>
-	<div id="content">
-		<?php include_once("navbar.php"); ?>
+<?php
+include_once("session.php");
+
+include_once("head.php"); ?>
 		<div class="container">
 			<div class="col-md-8 col-lg-8 col-md-offset-2">
 				<?php

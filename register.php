@@ -2,15 +2,9 @@
 if(!isset($_GET['invite'])){
 	header('Location: /');
 }
-include('session.php');
-?>
-<!DOCTYPE html>
-<html>
-<head>
-	<?php include_once("head.html"); ?>
-</head>
-<body>
-	<div id="content">
+include_once('session.php');
+
+include_once("head.php"); ?>
 		<div id="loginbox">
 			<div id="login-logo"><img src="/images/bop-logo-beta-full.png" alt="BoP Logo" width="300"></div>
 			<form name="register" id="loginform" action="form_action.php" method="post">

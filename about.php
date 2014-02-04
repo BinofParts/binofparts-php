@@ -1,14 +1,7 @@
-<?php
+<?php 
 include_once("session.php");
-?>
-<!DOCTYPE html>
-<html>
-<head>
-	<?php include_once("head.html"); ?>
-</head>
-<body>
-	<div id="content">
-		<?php include_once("navbar.php"); ?>
+
+include_once("head.php"); ?>
 		<div class="jumbotron missionjumbo">
 			<div class="container">
 				<div class="mission"><span>"Providing science and technology accessibility to the students."</span></br><span>- Our Mission -</span></div>
