@@ -206,11 +206,7 @@ body{
 #loginbox{
 	margin:auto;
 	width:300px;
-	margin-bottom: 75px;
-	margin-top: 50px;
-}
-#login-logo{
-	margin-bottom: 90px;
+	padding: 100px 0;
 }
 #loginform{
 	padding-top: 15px;

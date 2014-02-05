@@ -8,7 +8,6 @@ include_once("head.php"); ?>
 		<div class="container">
 			<div class="row">
 				<div id="loginbox">
-				<div id="login-logo"><img src="/images/bop-logo-beta-full.png" alt="BoP Logo" width="300"></div>
 					<form name="login" id="loginform" role="form" action="form_action.php" method="post">
 						<?php 
 							if(isset($_SESSION['error'])){
