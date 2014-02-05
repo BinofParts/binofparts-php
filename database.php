@@ -498,6 +498,19 @@ Your new password is: ".$newpassword."
 	    mysqli_close($link);
   	}
 	#--------->Create Something<---------#
+	function createNewAdmin($email){
+		//check if email is taken
+		$emailcheck = "SELECT email FROM admins WHERE email = '$email';";
+		$result2 = $this->qry($emailcheck);
+		if(mysqli_num_rows($result2) == 1) //email already registered
+		{
+			$_SESSION['error'] = "That user is already an admin.";
+			return;
+		}
+		$query = "INSERT INTO `admins` (`email`) VALUES ('$email')";
+		mysqli_real_query($this->link,$query);
+		$_SESSION['success'] = "New Admin has been added.";
+	}
 	function createPassword($pass){
 		//hash the password
 		$bcrypt = new Bcrypt(10);
@@ -555,6 +568,22 @@ Your new password is: ".$newpassword."
 		$this->qry($query);
 	}
 	#--------->Check Information<---------#
+	function checkAdmin($email){
+		$query = "SELECT * FROM admins WHERE email = '$email';";
+		$result = mysqli_query($this->link, $query);
+		
+		if (!$result || mysqli_num_rows($result) < 1)
+		{
+			mysqli_free_result($result);
+	    	mysqli_close($link);
+			return false;
+		}
+		else{
+			mysqli_free_result($result);
+	    	mysqli_close($link);
+			return true;
+		}
+	}	
 	function checkEmailExist($email){
 		$email = stripslashes(mysqli_real_escape_string($this->link, $email));
 		$query = "SELECT * FROM users WHERE email = '$email';";
@@ -618,7 +647,7 @@ Your new password is: ".$newpassword."
 		
 	}
 	function checkTeamsLastUpdated(){
-		$q = "SHOW TABLE STATUS FROM robotics LIKE 'teams';";		
+		$q = "SHOW TABLE STATUS FROM binofparts LIKE 'teams';";		
 		$result = mysqli_query($this->link,$q);
 		
 		while($array = mysqli_fetch_array($result)) {
@@ -626,7 +655,7 @@ Your new password is: ".$newpassword."
 		}
 	}
 	function checkEventsLastUpdated(){
-		$q = "SHOW TABLE STATUS FROM robotics LIKE 'events';";		
+		$q = "SHOW TABLE STATUS FROM binofparts LIKE 'events';";		
 		$result = mysqli_query($this->link,$q);
 		
 		while($array = mysqli_fetch_array($result)) {

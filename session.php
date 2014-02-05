@@ -55,15 +55,15 @@ class Session
 			 $this->username	.=  $this->userinfo['namelast'];
 			 $this->username_first	=  $this->userinfo['namefirst'];
 			 $this->username_last	.=  $this->userinfo['namelast'];
-			 $this->admin = $this->userinfo['admin'];
+			 $this->admin = $database->checkAdmin($this->userinfo['email']);
 			 //$this->joindate  = $this->userinfo['joindate'];
 	         return true;
-	      }
-	      /* User not logged in */
-	      else{
-	         return false;
-	      }
-	}	
+      	}
+      	/* User not logged in */
+      	else{
+        	return false;
+      	}
+	}
 };
 
 $session = new Session;
