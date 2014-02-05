@@ -18,9 +18,9 @@ class Database
 	 * Class variables.
 	 */
 	private $dbhost = 'localhost';
-	private $dbname = 'robotics';
-	private $dbuser = 'aaron';
-	private $dbpass = 'password';
+	private $dbname = 'binofparts';
+	private $dbuser = 'root';
+	private $dbpass = 'vagrant';
 	private $link;
 	function Database(){
 		$this->link = mysqli_init();
@@ -391,7 +391,7 @@ Your new password is: ".$newpassword."
 		foreach ($firsthalf as $row){
 			echo '
 				<li class="media" id="'.$row['id'].'">
-					<div class="left pull-left"><div class="imgcenter"></div><img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg"/></div>
+					<div class="left pull-left"><div class="imgcenter"></div><img class="media-object" src="/images/kop'.$year.'/'.$row['picture'].'"/></div>
 					<div class="media-body">
 						<h4 class="media-heading">'.$row['name'].'</h4>
 					</div>
@@ -403,7 +403,7 @@ Your new password is: ".$newpassword."
 		foreach ($secondhalf as $row){
 			echo '
 				<li class="media" id="'.$row['id'].'">
-					<div class="left pull-left"><div class="imgcenter"></div><img class="media-object" src="/images/kop'.$year.'/'.$year.'kop'.$row['id'].'.jpg"/> </div>
+					<div class="left pull-left"><div class="imgcenter"></div><img class="media-object" src="/images/kop'.$year.'/'.$row['picture'].'"/> </div>
 					<div class="media-body">
 						<h4 class="media-heading">'.$row['name'].'</h4>
 					</div>
