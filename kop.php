@@ -3,7 +3,7 @@ include_once("session.php");
 
 include_once("head.php"); ?>
 			<?php 
-			if ($_GET['y']<=2013 && $_GET['y']>=1992) { ?>
+			if ($_GET['y']<=2013 && $_GET['y']>=2009) { ?>
 				<div class="container">
 				<?php $database->displayKop($_GET['y']);
 					$mixpanel->identify($session->useremail);
