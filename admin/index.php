@@ -1,7 +1,8 @@
 <?php 
-include('../session.php');
-if(!$session->logged_in && $session->admin != 'Y' && $session->type == 'admin'){
+include_once('../session.php');
+if(!$session->logged_in){
 	header('Location: ../login.php');
+	exit;
 }
 
 include_once("../head.php"); ?>
